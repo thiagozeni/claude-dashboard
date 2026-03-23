@@ -1,0 +1,161 @@
+{
+  "mcps": [
+    {
+      "id": "canva",
+      "name": "Canva",
+      "icon": "🎨",
+      "status": "connected",
+      "description": "Criação e edição de designs no Canva — templates, brand kits, exportação, comentários e colaboração.",
+      "capabilities": [
+        "Criar designs a partir de prompts",
+        "Editar designs existentes",
+        "Exportar em múltiplos formatos",
+        "Gerenciar pastas e assets",
+        "Brand kits",
+        "Comentários e colaboração"
+      ],
+      "toolCount": 31
+    },
+    {
+      "id": "gmail",
+      "name": "Gmail",
+      "icon": "✉️",
+      "status": "connected",
+      "description": "Acesso à caixa de entrada do Gmail — leitura, busca, criação de rascunhos e gerenciamento de labels.",
+      "capabilities": [
+        "Buscar e ler emails",
+        "Ler threads completas",
+        "Criar rascunhos",
+        "Listar e gerenciar labels",
+        "Obter perfil da conta"
+      ],
+      "toolCount": 7
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar",
+      "icon": "📅",
+      "status": "connected",
+      "description": "Gerenciamento completo do Google Calendar — eventos, disponibilidade, agendamento inteligente.",
+      "capabilities": [
+        "Listar e buscar eventos",
+        "Criar e atualizar eventos",
+        "Deletar eventos",
+        "Verificar disponibilidade",
+        "Encontrar horários livres",
+        "Responder convites"
+      ],
+      "toolCount": 9
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "icon": "🗄️",
+      "status": "connected",
+      "description": "Gerenciamento completo de projetos Supabase — banco de dados, edge functions, migrações, branches e logs.",
+      "capabilities": [
+        "Executar SQL e gerenciar tabelas",
+        "Criar e gerenciar projetos",
+        "Aplicar e listar migrações",
+        "Deploy de edge functions",
+        "Gerenciar branches de banco",
+        "Gerar tipos TypeScript",
+        "Visualizar logs e advisors",
+        "Pausar e restaurar projetos"
+      ],
+      "toolCount": 29
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "icon": "✏️",
+      "status": "connected",
+      "description": "Leitura e geração de designs no Figma — contexto de design, screenshots, diagramas FigJam e Code Connect.",
+      "capabilities": [
+        "Ler contexto e código de designs",
+        "Capturar screenshots de frames",
+        "Gerar diagramas no FigJam",
+        "Criar designs via prompts",
+        "Gerenciar Code Connect (mapeamento componentes)",
+        "Obter variáveis e tokens de design",
+        "Ler metadados de arquivos"
+      ],
+      "toolCount": 13
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "icon": "▲",
+      "status": "connected",
+      "description": "Deploy e gerenciamento de projetos na Vercel — deployments, logs, domínios e toolbar de feedback.",
+      "capabilities": [
+        "Deploy de projetos",
+        "Listar deployments e projetos",
+        "Ver logs de build e runtime",
+        "Verificar disponibilidade de domínios",
+        "Gerenciar threads de feedback (toolbar)",
+        "Buscar documentação da Vercel",
+        "Acessar URLs de preview"
+      ],
+      "toolCount": 18
+    },
+    {
+      "id": "gemini-image",
+      "name": "Gemini Image",
+      "icon": "🖼️",
+      "status": "connected",
+      "description": "Geração e edição de imagens via Google Gemini — cria imagens a partir de prompts e edita imagens existentes.",
+      "capabilities": [
+        "Gerar imagens a partir de descrições em linguagem natural",
+        "Editar e modificar imagens existentes"
+      ],
+      "toolCount": 2
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "icon": "⚡",
+      "status": "connected",
+      "description": "Integração com o ecossistema Zapier — acesso a automações e conexões com 7000+ apps via MCP.",
+      "capabilities": [
+        "Configurar integração com Zapier",
+        "Acionar automações (Zaps)",
+        "Conectar com 7000+ apps externos"
+      ],
+      "toolCount": 1
+    }
+  ],
+  "skills": [
+    {
+      "id": "firecrawl",
+      "name": "firecrawl",
+      "icon": "🕷️",
+      "type": "Plugin (Claude Code)",
+      "description": "Web scraping e crawling via Firecrawl — extrai conteúdo de páginas web em formato limpo (Markdown/JSON), rastreia sites inteiros e realiza buscas estruturadas.",
+      "install": "claude plugin install firecrawl + npm install -g firecrawl-cli",
+      "useCases": ["Scraping de páginas web", "Crawling de sites inteiros", "Extração de conteúdo limpo (Markdown)", "Busca estruturada na web", "Mapeamento de URLs de um domínio"]
+    }
+  ],
+  "tools": [
+    {
+      "id": "yt-dlp",
+      "name": "yt-dlp",
+      "version": "2026.03.03",
+      "icon": "⬇️",
+      "type": "CLI",
+      "description": "Downloader de vídeos e áudios de YouTube e outros sites (suporte a 1000+ sites).",
+      "install": "via Python 3.14",
+      "useCases": ["Download de vídeos", "Extração de áudio", "Download de playlists", "Formatos customizados"]
+    },
+    {
+      "id": "notebooklm-py",
+      "name": "notebooklm-py",
+      "version": "0.3.3",
+      "icon": "📓",
+      "type": "CLI + Python API",
+      "description": "CLI e API Python para automação do Google NotebookLM — criar notebooks, adicionar fontes, gerar podcasts programaticamente.",
+      "install": "pip install notebooklm-py",
+      "useCases": ["Criar notebooks via CLI", "Adicionar fontes automaticamente", "Gerar podcasts", "Download de artifacts"]
+    }
+  ]
+}

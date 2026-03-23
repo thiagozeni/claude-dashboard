@@ -1,0 +1,178 @@
+[
+  {
+    "id": "pdf",
+    "name": "pdf",
+    "origin": "document-skills",
+    "category": "Documentos",
+    "description": "Leitura, criação, mesclagem, divisão, rotação, watermark, OCR e manipulação de arquivos PDF.",
+    "trigger": "Mencione arquivo .pdf ou peça para criar/editar/unir PDFs"
+  },
+  {
+    "id": "docx",
+    "name": "docx",
+    "origin": "document-skills",
+    "category": "Documentos",
+    "description": "Cria, lê, edita e manipula documentos Word (.docx) com formatação rica, sumário, cabeçalhos, imagens e controle de alterações.",
+    "trigger": "Mencione 'Word doc', '.docx', 'relatório', 'memo' ou 'carta' como arquivo Word"
+  },
+  {
+    "id": "pptx",
+    "name": "pptx",
+    "origin": "document-skills",
+    "category": "Documentos",
+    "description": "Cria, lê, edita e manipula apresentações PowerPoint (.pptx) — slides, temas, notas, templates.",
+    "trigger": "Mencione 'deck', 'slides', 'apresentação' ou qualquer arquivo .pptx"
+  },
+  {
+    "id": "xlsx",
+    "name": "xlsx",
+    "origin": "document-skills",
+    "category": "Documentos",
+    "description": "Cria, lê, edita e corrige planilhas (.xlsx, .csv, .tsv) — fórmulas, gráficos, formatação, limpeza de dados.",
+    "trigger": "Mencione arquivo .xlsx/.csv ou peça para criar/manipular planilha"
+  },
+  {
+    "id": "doc-coauthoring",
+    "name": "doc-coauthoring",
+    "origin": "document-skills",
+    "category": "Documentos",
+    "description": "Workflow estruturado de co-autoria para documentação, propostas, specs técnicas e decisões.",
+    "trigger": "Mencione 'escrever documentação', 'criar proposta', 'redigir spec' ou similares"
+  },
+  {
+    "id": "frontend-design",
+    "name": "frontend-design",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Cria interfaces web de produção com alta qualidade visual — componentes, páginas, dashboards, React, HTML/CSS.",
+    "trigger": "Peça componente, página, landing page, dashboard ou qualquer interface web"
+  },
+  {
+    "id": "canvas-design",
+    "name": "canvas-design",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Cria arte visual em .png e .pdf usando princípios de design — posters, artes estáticas, peças gráficas.",
+    "trigger": "Peça um poster, arte, design ou peça gráfica estática"
+  },
+  {
+    "id": "algorithmic-art",
+    "name": "algorithmic-art",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Cria arte algorítmica com p5.js — randomness seeded, campos de fluxo, sistemas de partículas, generativo.",
+    "trigger": "Peça arte generativa, algorítmica, flow fields ou sistemas de partículas"
+  },
+  {
+    "id": "theme-factory",
+    "name": "theme-factory",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Aplica temas visuais (10 pré-definidos ou customizados) a artifacts — slides, docs, landing pages, HTML.",
+    "trigger": "Peça para aplicar tema ou estilizar um artifact existente"
+  },
+  {
+    "id": "web-artifacts-builder",
+    "name": "web-artifacts-builder",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Cria artifacts HTML multi-componentes com React, Tailwind CSS e shadcn/ui — para UIs complexas com estado e roteamento.",
+    "trigger": "Peça artifact web complexo com React, Tailwind ou shadcn/ui"
+  },
+  {
+    "id": "brand-guidelines",
+    "name": "brand-guidelines",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Aplica cores e tipografia oficiais da Anthropic a qualquer artifact.",
+    "trigger": "Peça algo no estilo visual da Anthropic ou com brand guidelines"
+  },
+  {
+    "id": "slack-gif-creator",
+    "name": "slack-gif-creator",
+    "origin": "document-skills",
+    "category": "Design & Frontend",
+    "description": "Cria GIFs animados otimizados para o Slack com constraints específicos de tamanho e formato.",
+    "trigger": "Peça 'GIF para Slack' ou GIF animado"
+  },
+  {
+    "id": "claude-api",
+    "name": "claude-api",
+    "origin": "document-skills",
+    "category": "Dev & Infra",
+    "description": "Constrói apps com a Claude API ou Anthropic SDK (Python/TypeScript) — inclui Agent SDK.",
+    "trigger": "Código importa 'anthropic' / '@anthropic-ai/sdk' / 'claude_agent_sdk'"
+  },
+  {
+    "id": "mcp-builder",
+    "name": "mcp-builder",
+    "origin": "document-skills",
+    "category": "Dev & Infra",
+    "description": "Cria servidores MCP de alta qualidade em Python (FastMCP) ou TypeScript para integrar APIs externas.",
+    "trigger": "Peça para criar um servidor MCP ou integrar API via MCP"
+  },
+  {
+    "id": "webapp-testing",
+    "name": "webapp-testing",
+    "origin": "document-skills",
+    "category": "Dev & Infra",
+    "description": "Testa e interage com apps web locais via Playwright — screenshots, logs de browser, debugging de UI.",
+    "trigger": "Peça para testar, verificar ou debugar uma web app local"
+  },
+  {
+    "id": "skill-creator",
+    "name": "skill-creator",
+    "origin": "document-skills",
+    "category": "Dev & Infra",
+    "description": "Cria, modifica, avalia e otimiza skills — inclui evals, benchmarks e análise de performance.",
+    "trigger": "Peça para criar, editar ou otimizar uma skill"
+  },
+  {
+    "id": "notebooklm",
+    "name": "notebooklm",
+    "origin": "built-in",
+    "category": "Automação",
+    "description": "API completa para Google NotebookLM — criar notebooks, adicionar fontes, gerar podcasts e artifacts, download em múltiplos formatos.",
+    "trigger": "Use /notebooklm ou diga 'criar podcast sobre X' ou qualquer tarefa NotebookLM"
+  },
+  {
+    "id": "yt-search",
+    "name": "yt-search",
+    "origin": "built-in",
+    "category": "Automação",
+    "description": "Busca no YouTube e retorna resultados estruturados com metadados dos vídeos.",
+    "trigger": "Peça para buscar vídeos no YouTube"
+  },
+  {
+    "id": "internal-comms",
+    "name": "internal-comms",
+    "origin": "document-skills",
+    "category": "Comunicação",
+    "description": "Redige comunicações internas em formatos corporativos — status reports, newsletters, FAQs, incident reports, updates de liderança.",
+    "trigger": "Peça comunicação interna, status report, newsletter ou update de projeto"
+  },
+  {
+    "id": "keybindings-help",
+    "name": "keybindings-help",
+    "origin": "built-in",
+    "category": "Utilitários",
+    "description": "Configura atalhos de teclado do Claude Code — rebind, chord shortcuts, ~/.claude/keybindings.json.",
+    "trigger": "Peça para customizar keybindings ou atalhos de teclado"
+  },
+  {
+    "id": "loop",
+    "name": "loop",
+    "origin": "built-in",
+    "category": "Utilitários",
+    "description": "Roda um prompt ou slash command em intervalo recorrente (ex: /loop 5m /foo, padrão 10m).",
+    "trigger": "Peça para repetir tarefa a cada N minutos ou verificar algo periodicamente"
+  },
+  {
+    "id": "simplify",
+    "name": "simplify",
+    "origin": "built-in",
+    "category": "Utilitários",
+    "description": "Revisa código alterado em busca de oportunidades de reuso, qualidade e eficiência, e corrige os problemas encontrados.",
+    "trigger": "Após implementar código, peça para simplificar ou revisar qualidade"
+  }
+]

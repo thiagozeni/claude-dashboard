@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claude Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <nav id="sidebar" aria-label="Navegação principal">
+    <div class="sidebar-logo" aria-label="Claude Hub">
+      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 2L28 9.5V22.5L16 30L4 22.5V9.5L16 2Z" fill="#7C3AED" opacity="0.15" />
+        <path d="M16 2L28 9.5V22.5L16 30L4 22.5V9.5L16 2Z" stroke="#7C3AED" stroke-width="1.5" fill="none" />
+        <path d="M16 7L23.5 11.5V20.5L16 25L8.5 20.5V11.5L16 7Z" fill="#7C3AED" opacity="0.4" />
+        <circle cx="16" cy="16" r="3.5" fill="#7C3AED" />
+      </svg>
+      <span class="logo-title">Claude Hub</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Capacidades</div>
+
+      <button class="nav-item active" data-target="skills" aria-current="page">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 4h12M4 8h8M6 12h4" />
+        </svg>
+        Skills
+      </button>
+
+      <button class="nav-item" data-target="agents">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="8" cy="5" r="3" />
+          <path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" />
+        </svg>
+        Sub-Agents
+      </button>
+
+      <button class="nav-item" data-target="mcps">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="5" height="5" rx="1" />
+          <rect x="9" y="2" width="5" height="5" rx="1" />
+          <rect x="2" y="9" width="5" height="5" rx="1" />
+          <path d="M9 11.5h5M11.5 9v5" />
+        </svg>
+        MCPs &amp; Ferramentas
+      </button>
+
+      <div class="nav-section-label">Projetos</div>
+
+      <button class="nav-item" data-target="projects">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 4a1 1 0 0 1 1-1h3.586a1 1 0 0 1 .707.293L8.707 4.707A1 1 0 0 0 9.414 5H13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4Z" />
+        </svg>
+        Projetos
+      </button>
+
+      <div class="nav-section-label">Aprendizado</div>
+
+      <button class="nav-item" data-target="evolucao">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="2,12 5.5,7.5 8.5,9.5 13,3" />
+          <polyline points="10.5,3 13,3 13,5.5" />
+        </svg>
+        Evolução
+      </button>
+
+      <div class="nav-section-label">Infraestrutura</div>
+
+      <button class="nav-item" data-target="aihub">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="8" cy="8" r="2.5" />
+          <path d="M8 2v1.5M8 12.5V14M2 8h1.5M12.5 8H14" />
+          <path d="M4.1 4.1l1.1 1.1M10.8 10.8l1.1 1.1M4.1 11.9l1.1-1.1M10.8 5.2l1.1-1.1" />
+        </svg>
+        AI Hub
+      </button>
+
+      <div class="nav-section-label">Referência</div>
+
+      <button class="nav-item" data-target="cheatsheet">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3h10v10H3z" />
+          <path d="M5 6h6M5 8.5h4M5 11h3" />
+        </svg>
+        Cheatsheet
+      </button>
+
+      <button class="nav-item" data-target="backlog">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="1" y="3" width="4" height="10" rx="1" />
+          <rect x="6" y="3" width="4" height="10" rx="1" />
+          <rect x="11" y="3" width="4" height="10" rx="1" />
+        </svg>
+        Backlog
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-date" id="sidebar-date" aria-label="Data atual"></div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main id="content">
+
+    <!-- Mobile header -->
+    <div class="mobile-header">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <span class="mobile-title" id="mobile-title">Skills</span>
+    </div>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="page" role="main" aria-labelledby="skills-title">
+      <div class="page-header">
+        <h1 class="page-title" id="skills-title">Skills</h1>
+        <p class="page-subtitle">Capacidades especializadas disponíveis nesta instância do Claude Code.</p>
+      </div>
+      <div class="filter-bar" id="skills-filter" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="cards-grid" id="skills-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- AGENTS -->
+    <section id="agents" class="page hidden" aria-labelledby="agents-title">
+      <div class="page-header">
+        <h1 class="page-title" id="agents-title">Sub-Agents</h1>
+        <p class="page-subtitle">Agentes especializados para delegação de tarefas. As notas são salvas automaticamente.</p>
+      </div>
+      <div class="cards-grid two-col" id="agents-grid"></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page hidden" aria-labelledby="projects-title">
+      <div class="page-header">
+        <h1 class="page-title" id="projects-title">Projetos</h1>
+        <p class="page-subtitle">Projetos desenvolvidos com Claude Code.</p>
+      </div>
+      <div class="cards-grid two-col" id="projects-grid"></div>
+    </section>
+
+    <!-- MCPs -->
+    <section id="mcps" class="page hidden" aria-labelledby="mcps-title">
+      <div class="page-header">
+        <h1 class="page-title" id="mcps-title">MCPs &amp; Ferramentas</h1>
+        <p class="page-subtitle">Servidores MCP conectados e ferramentas CLI instaladas no ambiente.</p>
+      </div>
+      <div id="mcps-content"></div>
+    </section>
+
+    <!-- CHEATSHEET -->
+    <section id="cheatsheet" class="page hidden" aria-labelledby="cheatsheet-title">
+      <div class="page-header">
+        <h1 class="page-title" id="cheatsheet-title">Cheatsheet</h1>
+        <p class="page-subtitle">Referência rápida de comandos, atalhos e padrões de uso do Claude Code.</p>
+      </div>
+      <div class="accordion" id="cheatsheet-accordion"></div>
+    </section>
+
+    <!-- BACKLOG -->
+    <section id="backlog" class="page hidden" aria-labelledby="backlog-title">
+      <div class="page-header">
+        <h1 class="page-title" id="backlog-title">Backlog</h1>
+        <p class="page-subtitle">Kanban pessoal de ideias e tarefas. Dados salvos no navegador.</p>
+      </div>
+      <div class="kanban-board" id="kanban-board" aria-label="Quadro Kanban"></div>
+    </section>
+
+    <!-- AI HUB -->
+    <section id="aihub" class="page hidden" aria-labelledby="aihub-title">
+      <div class="page-header">
+        <h1 class="page-title" id="aihub-title">AI Hub</h1>
+        <p class="page-subtitle">Arquitetura do roteador de IAs locais — uso por rota e contratempos registrados.</p>
+      </div>
+      <div id="aihub-content"></div>
+    </section>
+
+    <!-- EVOLUÇÃO -->
+    <section id="evolucao" class="page hidden" aria-labelledby="evolucao-title">
+      <div class="page-header">
+        <h1 class="page-title" id="evolucao-title">Evolução</h1>
+        <p class="page-subtitle">Aprendizado diário, mapa de habilidades e plano de auto-aprimoramento.</p>
+      </div>
+      <div class="subtabs" id="evolucao-tabs" role="tablist" aria-label="Seções de Evolução">
+        <button class="subtab active" data-subtab="diario" role="tab" aria-selected="true">Diário</button>
+        <button class="subtab" data-subtab="habilidades" role="tab" aria-selected="false">Habilidades</button>
+        <button class="subtab" data-subtab="plano" role="tab" aria-selected="false">Plano</button>
+      </div>
+      <div id="subtab-diario" class="subtab-content" role="tabpanel"></div>
+      <div id="subtab-habilidades" class="subtab-content hidden" role="tabpanel"></div>
+      <div id="subtab-plano" class="subtab-content hidden" role="tabpanel"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

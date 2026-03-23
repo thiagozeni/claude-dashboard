@@ -1,0 +1,127 @@
+{
+  "date": "2026-03-22",
+  "status": "pending",
+  "generatedAt": "2026-03-22T22:03:01.058936",
+  "projectsModified": [
+    "eat-kitchen-concierge",
+    "claude-dashboard",
+    "magma",
+    "thiago-zeni",
+    "werdum-fight"
+  ],
+  "gitSummary": [
+    {
+      "project": "cachorradas-estudios",
+      "hasGit": true,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 0,
+      "uncommittedFiles": [],
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "d6888d9",
+        "message": "fix: adiciona permissão de escrita ao workflow"
+      }
+    },
+    {
+      "project": "eat-kitchen-concierge",
+      "hasGit": true,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 3,
+      "uncommittedFiles": [
+        "M api/chat/stream.ts",
+        "M server/index.ts",
+        "M vercel.json"
+      ],
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "de20e1a",
+        "message": "feat: atualiza fotos dos pratos Peleia, Sweet Potato Fries, Eat Nhoque e Tropical"
+      }
+    },
+    {
+      "project": "alugueis-bea",
+      "hasGit": false,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 0,
+      "uncommittedFiles": [],
+      "recentFiles": [],
+      "latestCommit": null
+    },
+    {
+      "project": "claude-dashboard",
+      "hasGit": false,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 0,
+      "uncommittedFiles": [],
+      "recentFiles": [
+        "index.html",
+        "style.css",
+        "app.js",
+        "logs/server.log",
+        "data/pending-reflection.json",
+        "data/evolution-log.json",
+        "data/skill-levels.json",
+        "data/improvement-plan.json",
+        "data/ai-hub.json"
+      ],
+      "latestCommit": null
+    },
+    {
+      "project": "magma",
+      "hasGit": true,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 2,
+      "uncommittedFiles": [
+        "?? video-fx/Zoom_out_e1e6f639ea.mp4",
+        "?? videos/"
+      ],
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "377804c",
+        "message": "feat: stagger entrance animations on members, show collage and gallery"
+      }
+    },
+    {
+      "project": "thiago-zeni",
+      "hasGit": true,
+      "commits": 0,
+      "messages": [],
+      "uncommitted": 2,
+      "uncommittedFiles": [
+        "?? _cases/",
+        "?? img/perfil_thiago_zeni.mp4"
+      ],
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "c191226",
+        "message": "feat: crossfade no loop do hero video no mobile"
+      }
+    },
+    {
+      "project": "werdum-fight",
+      "hasGit": true,
+      "commits": 5,
+      "messages": [
+        "0e74677 feat: configure GitHub Pages deploy",
+        "79001b2 feat: rewrite scenes with pixel-perfect Figma coordinates v1.1",
+        "b479887 feat: implement Figma HUD layout v1.2 - full pixel-perfect game UI",
+        "37957f4 v1.1 — layout Figma implementado nas telas",
+        "047f512 v1.0 — base do jogo funcional"
+      ],
+      "uncommitted": 0,
+      "uncommittedFiles": [],
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "0e74677",
+        "message": "feat: configure GitHub Pages deploy"
+      }
+    }
+  ],
+  "suggestedTitle": "Trabalho em eat-kitchen-concierge, claude-dashboard, magma, thiago-zeni, werdum-fight",
+  "note": "Abra o dashboard > Evolução > Diário para completar a reflexão."
+}

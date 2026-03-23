@@ -1,0 +1,178 @@
+[
+  {
+    "id": "cachorradas-estudios",
+    "name": "Cachorradas Estudios",
+    "path": "/Users/pro15/Claude/cachorradas-estudios",
+    "url": "https://thiagozeni.github.io/cachorradas-estudios",
+    "repo": "https://github.com/thiagozeni/cachorradas-estudios",
+    "type": "Site Estático",
+    "status": "active",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Python",
+      "GitHub Actions",
+      "YouTube Data API v3"
+    ],
+    "description": "Site do canal YouTube @CachorradasEstudios com atualização automática diária de stats e vídeos via GitHub Actions às 08h BRT.",
+    "highlights": [
+      "GitHub Pages",
+      "Auto-update diário 08h BRT",
+      "Séries: GDV, Metallica Slayer, E SE???"
+    ],
+    "lastActivity": "2026-03-15"
+  },
+  {
+    "id": "eat-kitchen-concierge",
+    "name": "EAT Kitchen Concierge",
+    "path": "/Users/pro15/Claude/eat-kitchen-concierge",
+    "url": null,
+    "repo": null,
+    "type": "Fullstack",
+    "status": "active",
+    "tech": [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Tailwind v4",
+      "Express",
+      "Gemini API",
+      "lucide-react",
+      "motion"
+    ],
+    "description": "Concierge gastronômico com IA para o restaurante EAT Kitchen — recomenda pratos com streaming de respostas e suporte a múltiplos idiomas.",
+    "highlights": [
+      "SSE streaming",
+      "8 idiomas",
+      "Multi-step upselling flow"
+    ],
+    "lastActivity": "2026-03-18"
+  },
+  {
+    "id": "alugueis-bea",
+    "name": "Aluguéis Bea",
+    "path": "/Users/pro15/Claude/alugueis-bea",
+    "url": null,
+    "repo": null,
+    "type": "Scripts",
+    "status": "maintenance",
+    "tech": [
+      "Python",
+      "Google Sheets API",
+      "Apps Script",
+      "openpyxl"
+    ],
+    "description": "Controle de aluguéis com extração automática de PDFs protegidos por senha e preenchimento de planilha Google Sheets.",
+    "highlights": [
+      "Extração de PDFs com senha",
+      "Integração Google Sheets"
+    ],
+    "lastActivity": "2026-03-15"
+  },
+  {
+    "id": "claude-dashboard",
+    "name": "Claude Dashboard",
+    "path": "/Users/pro15/Claude/claude-dashboard",
+    "url": null,
+    "repo": null,
+    "type": "Site Estático",
+    "status": "active",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "description": "Central de informações sobre capacidades do Claude, sub-agents, projetos desenvolvidos juntos, MCPs conectados e backlog de ideias.",
+    "highlights": [
+      "Uso interno",
+      "Sem build pipeline",
+      "Dados em JSON"
+    ],
+    "lastActivity": "2026-03-18"
+  },
+  {
+    "id": "magma",
+    "name": "Magma",
+    "path": "/Users/pro15/Claude/magma",
+    "url": null,
+    "repo": null,
+    "type": "Site Estático",
+    "status": "active",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "description": "Site histórico da banda Magma (Nova Hamburgo/RS, 2001–2025) — discografia, fotos, vídeos e memória da trajetória da banda.",
+    "highlights": [
+      "Site comemorativo",
+      "Sem dependências externas"
+    ],
+    "lastActivity": "2026-03-18"
+  },
+  {
+    "id": "thiago-zeni",
+    "name": "Thiago Zeni",
+    "path": "/Users/pro15/Claude/thiago-zeni",
+    "url": null,
+    "repo": null,
+    "type": "Site Estático",
+    "status": "active",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "description": "Site pessoal de Thiago Zeni — Marketing Digital & Liderança Executiva.",
+    "highlights": [
+      "Site pessoal",
+      "Sem dependências externas"
+    ],
+    "lastActivity": "2026-03-18"
+  },
+  {
+    "id": "werdum-fight",
+    "name": "Werdum Fight",
+    "path": "/Users/pro15/Claude/werdum-fight",
+    "url": null,
+    "repo": null,
+    "type": "Game",
+    "status": "active",
+    "tech": [
+      "TypeScript",
+      "Vite",
+      "Phaser 3"
+    ],
+    "description": "Arena Beat'em Up inspirado em Streets of Rage e Final Fight, desenvolvido com Phaser 3.",
+    "highlights": [
+      "Arena Beat'em Up",
+      "Phaser 3",
+      "Sprites e personagens customizados"
+    ],
+    "lastActivity": "2026-03-18"
+  },
+  {
+    "id": "ai-hub",
+    "name": "AI Hub Local",
+    "path": "/Users/pro15",
+    "url": null,
+    "repo": null,
+    "type": "Scripts",
+    "status": "active",
+    "tech": [
+      "Python",
+      "zsh",
+      "MLX",
+      "Gemini API",
+      "HuggingFace"
+    ],
+    "description": "Hub de IAs locais rodando no Apple Silicon via MLX — roteador inteligente que classifica prompts e despacha para Qwen2.5-Coder (coding), DeepSeek-R1 14B (reasoning) ou Gemini 2.5 Pro (research).",
+    "highlights": [
+      "Qwen2.5-Coder-7B-4bit",
+      "DeepSeek-R1-Distill-Qwen-14B-4bit",
+      "Gemini 2.5 Pro (web)"
+    ],
+    "lastActivity": "2026-03-15"
+  }
+]

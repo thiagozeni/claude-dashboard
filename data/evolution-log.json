@@ -1,0 +1,366 @@
+[
+  {
+    "id": "log-014",
+    "date": "2026-03-22",
+    "project": "claude-dashboard",
+    "title": "Seção AI Hub — diagrama SVG, stats de uso por rota e log de contratempos",
+    "learned": [
+      "SVG gerado via DOM API em JS puro: document.createElementNS('http://www.w3.org/2000/svg', tag) + setAttribute para cada propriedade — sem innerHTML, sem biblioteca, sem XSS risk",
+      "Marker de arrowhead em SVG: <marker> com <path d='M0,0 L0,6 L8,3 z'> dentro de <defs>, referenciado via marker-end='url(#arrow)' — técnica padrão para setas em diagramas SVG",
+      "viewBox='0 0 760 390' com width='100%' no elemento SVG: o SVG escala responsivamente para o container CSS sem JavaScript adicional — coordenadas internas fixas, apresentação fluida",
+      "Badges de contagem sobrepostos nos nós do diagrama: circle + text posicionados por cx/cy absolutos sobre os boxes das rotas — sem z-index, só ordem de append no DOM define qual elemento fica na frente",
+      "Dados de contratempos com severity (low/medium/high) + resolved (boolean): estrutura mínima que permite filtros futuros e indicação visual de open vs. closed sem campos redundantes",
+      "Grid de duas colunas responsivo para stats + incidents com @media (max-width: 768px) que colapsa para 1fr — padrão já presente no dashboard, aplicado consistentemente"
+    ],
+    "toolsUsed": ["Read", "Edit", "Write", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "AI Hub — diagrama SVG de arquitetura + usage stats + incident log",
+    "highlight": "SVG como linguagem de diagrama nativa no browser — gerado 100% em JS vanilla sem dependência, sem canvas, sem biblioteca. A técnica de createElementNS é direta e produz SVG limpo e acessível."
+  },
+  {
+    "id": "log-018",
+    "date": "2026-03-22",
+    "project": "werdum-fight",
+    "title": "v1.2 — HUD pixel-perfect e rewrite das cenas com coordenadas Figma",
+    "learned": [
+      "Workflow pixel-perfect com Figma → Phaser: extrair x/y/w/h do Figma e passar diretamente aos construtores de Text/Graphics/Image do Phaser — elimina ajuste visual por tentativa e erro",
+      "HUD completo com portrait boxes, HP bars e timer MM:SS: cada elemento tem coordenada Figma própria; o timer exige updateTime() chamado a cada frame no GameScene e formatação `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`",
+      "Pixelify Sans Bold como segunda fonte pixel art (além de Press Start 2P): mais legível em tamanhos menores, útil para HUD onde Press Start 2P é pesado demais",
+      "`make.graphics()` no Phaser não aceita opção 'add' — chamar sem argumentos e posicionar via `setPosition()` é o padrão correto; o argumento extra lança erro silencioso",
+      "VirtualJoystick com posições Figma: joystick em (60, 737), botões nas posições exatas do layout — consistência visual entre desktop e mobile depende de coordenadas absolutas no canvas"
+    ],
+    "toolsUsed": ["Read", "Edit", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "b479887",
+    "version": "v1.2 — HUD pixel-perfect + rewrite pixel-perfect das cenas de menu",
+    "highlight": "Workflow Figma → coordenadas diretas no Phaser é o padrão definitivo para pixel-perfect em jogos 2D. Elimina iteração visual e torna o código auto-documentado com as medidas do design."
+  },
+  {
+    "id": "log-017",
+    "date": "2026-03-22",
+    "project": "werdum-fight",
+    "title": "v1.0 → v1.1 — jogo completo e telas com arte Figma",
+    "learned": [
+      "Double commit strategy para jogos: v1.0 = mecânica completa funcional, v1.1 = polish visual — separar gameplay de arte facilita debug se o visual quebrar algo",
+      "Press Start 2P via Google Fonts em Phaser 3: importar no index.html e referenciar como fontFamily no TextStyle — Phaser usa o DOM font stack, não assets de bitmap",
+      "SelectScene com sideview preview: personagem lateral grande (~50% da tela) + grid de retratos menores à direita — composição que mostra o personagem em contexto sem tela separada de detalhes",
+      "Cursor '1P▼' navegável por teclado (A/D/Left/Right) com wrapping circular: índice modular `(current + dir + total) % total` é o pattern mínimo para navegação sem boundary check",
+      "Cena de GameOver com bifurcação YES/NO: manter estado da wave corrente e repassar ao reiniciar permite continuar exatamente do ponto de morte — estado mínimo necessário é apenas o número da wave",
+      "BootScene carrega sideview sprites (werdum-sv, dida-sv, thor-sv) separados dos sprites de combate — assets da UI de seleção têm dimensões diferentes, não reaproveitar spritesheets de gameplay"
+    ],
+    "toolsUsed": ["Read", "Edit", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "37957f4",
+    "version": "v1.1 — TitleScene, SelectScene, GameOverContinueScene, YouWinScene com arte Figma",
+    "highlight": "Primeiro jogo do portfólio com telas completas de UI em arte pixel art real. O padrão de SelectScene com sideview + grid é reutilizável em qualquer beat'em up."
+  },
+  {
+    "id": "log-016",
+    "date": "2026-03-20",
+    "project": "thiago-zeni",
+    "title": "Crossfade no loop do hero video mobile via double-buffering",
+    "learned": [
+      "Double-buffering de vídeo para loop sem corte: criar um `<video>` clone com `position: absolute; opacity: 0`, iniciar a reprodução dele quando o original está a `FADE` segundos do fim, então cruzar opacidades — elimina o flash de frame preto do loop nativo",
+      "Fade cruzado com CSS transition + JS: definir `transition: opacity 0.5s` no CSS e controlar apenas `opacity` em JS — o browser interpola suavemente sem requestAnimationFrame adicional",
+      "Swap de roles após o crossfade: ao concluir, o clone vira o novo 'primary' e o antigo primary vira o novo 'standby', resetando `currentTime` para 0 — ciclo infinito com N=2 buffers",
+      "Clone de vídeo via `document.createElement('video')` com mesmo `src`: carregamento paralelo pelo browser é automático se o arquivo já está em cache — latência de cross-fade praticamente zero",
+      "Por que `loop` nativo falha no mobile iOS: implementação do decoder H.264 no iOS não garante continuidade entre o último e o primeiro frame — double-buffering é a solução portátil"
+    ],
+    "toolsUsed": ["Read", "Edit"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "c191226",
+    "version": "hero mobile — crossfade loop sem flash via double-buffering",
+    "highlight": "Técnica de double-buffering de vídeo é a solução definitiva para loop seamless em mobile. Reutilizável em qualquer hero section com vídeo em loop."
+  },
+  {
+    "id": "log-015",
+    "date": "2026-03-19",
+    "project": "thiago-zeni",
+    "title": "Cases em grid 2 colunas, hover com linha lime, novo case Programa 4 por 4",
+    "learned": [
+      "Linha deslizante com `::after` e `scaleX`: `transform: scaleX(0)` no estado padrão, `scaleX(1)` no `:hover`, com `transform-origin: left` — desliza da esquerda para direita. `transform-origin: right` faria o contrário. Pattern CSS puro sem JS.",
+      "`overflow: hidden` é incompatível com `transform-style: preserve-3d` — o tilt 3D foi revertido para a linha lime porque `overflow: hidden` (necessário para conter a linha) cancela o contexto de stacking 3D dos filhos",
+      "Grid 2 colunas supera accordion para 5+ cases: accordion esconde conteúdo por default, exige clique para comparar — grid expõe tudo simultaneamente e é mais escaneável. Troca de paradigma de interação por visibilidade.",
+      "`requestAnimationFrame` no scrubbing de vídeo: envolver `video.currentTime = pos` em `requestAnimationFrame(() => {...})` alinha as escritas ao ciclo de render do browser — elimina jank em scroll rápido no mobile sem perda de fidelidade",
+      "Case page com og:image, canonical e JSON-LD únicos por page: cada `cases/case-X.html` tem seus próprios meta tags — critério mínimo para o Google indexar cada case como página independente com rich snippet"
+    ],
+    "toolsUsed": ["Read", "Edit"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "684937a",
+    "version": "cases grid 2col + hover linha lime + case Programa 4 por 4 + fixes mobile",
+    "highlight": "A incompatibilidade entre overflow:hidden e preserve-3d é uma armadilha clássica do CSS 3D. A linha deslizante com ::after scaleX é um padrão leve e elegante de hover que ficará no repertório."
+  },
+  {
+    "id": "log-013",
+    "date": "2026-03-18",
+    "project": "magma",
+    "title": "Animações stagger de entrada — members, show collage e galeria",
+    "learned": [
+      "CSS custom property --i como índice de stagger: setar via JS `el.style.setProperty('--i', i)` e usar `animation-delay: calc(var(--i, 0) * 80ms)` no CSS — separação limpa de lógica e estilo, zero JS de timing",
+      "Classe .stagger como gatilho de animação: adicionar a classe ativa os @keyframes nos filhos; remover e forçar reflow com `void grid.offsetWidth` reinicia a animação sem clonar elementos",
+      "Observar o .members-grid diretamente (não a section pai) é crítico — section entra na viewport quando ainda está no topo, grid pode estar abaixo da dobra; disparar pelo grid garante que o usuário já vê as cards",
+      "Painéis inativos com display:none não disparam IntersectionObserver — só o painel ativo (.tab-panel.active) tem seu grid visível, protegendo contra stagger de painéis fora de tela",
+      "clip-path em photoWipe evita conflito com transform:scale do hover — animação CSS com forwards fill sobrescreve transform do author; usar propriedade diferente (clip-path vs transform) mantém ambos funcionando",
+      "Gallery items com 34 elementos: delay de 35ms/item faz a onda diagonal completar em ~1.2s — items abaixo da dobra já chegam em opacity:1 quando o usuário rola até eles",
+      "staggerCards() chamado tanto pelo IntersectionObserver (primeira visualização) quanto pelo click handler de tab (cada troca) — mesma função serve os dois casos"
+    ],
+    "toolsUsed": ["Read", "Edit"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "377804c",
+    "version": "stagger entrada — members por formação, fotos do show collage, 34 itens da galeria",
+    "highlight": "Técnica de stagger com --i CSS var é reutilizável em qualquer grid com entrada sequencial. A descoberta de observar o grid em vez da section resolve um bug clássico de IntersectionObserver com conteúdo abaixo da dobra."
+  },
+  {
+    "id": "log-012",
+    "date": "2026-03-18",
+    "project": "thiago-zeni",
+    "title": "Hero e Prêmios com vídeo — scroll scrubbing cinematic",
+    "learned": [
+      "Video scroll scrubbing no desktop: `video.currentTime = (scrollY / maxScroll) * video.duration` — mapear posição de scroll para tempo do vídeo cria efeito frame-by-frame sem biblioteca",
+      "Hero pinned scroll: seção permanece fixada enquanto o vídeo 'completa' o scroll range — implementável via GSAP ScrollTrigger pin ou CSS position:sticky com scroll range calculado em JS",
+      "Mobile × iOS — autoplay+loop passivo é mais estável que scrubbing no iOS: `video.autoplay = true; video.loop = true; video.muted = true; video.playsInline = true` ativado só via JS (não no HTML)",
+      "Nav state coordenado com pin range: só mudar classe .scrolled na nav após sair do range do hero pin — evitar que a nav mude estado prematuramente enquanto a página está 'pintada'",
+      "Vídeo de prêmios com scrubbing por passagem pelo viewport: `getBoundingClientRect().top` mapeado para currentTime limitado a 6s — mesma técnica adaptada para elemento não-hero",
+      "Efeito boomerang via rAF: ao chegar no fim do vídeo, decrementar currentTime a cada frame em vez de loop normal — cria reverse sem `playbackRate = -1` (não suportado em todos os browsers)"
+    ],
+    "toolsUsed": ["Read", "Edit"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "e2627ba",
+    "version": "hero vídeo + prêmios scrubbing — desktop e mobile",
+    "highlight": "Scroll scrubbing de vídeo transforma o hero em experiência cinematic sem biblioteca pesada. Técnica reutilizável em qualquer seção hero que precise de movimento controlado pelo scroll."
+  },
+  {
+    "id": "log-011",
+    "date": "2026-03-18",
+    "project": "thiago-zeni",
+    "title": "Cases individuais — pages separadas, SEO completo e animações de reveal",
+    "learned": [
+      "Site multi-page a partir de single-file: criar HTML separado por case + sitemap.xml — simples de manter, máximo de SEO por página (canonical, OG por case, JSON-LD com dados específicos)",
+      "Scroll reveal com IntersectionObserver nos 5 cases: adicionar classe .visible quando entra na viewport ativa transition CSS — zero library, controle total",
+      "Preloader skip na navegação interna: detectar referrer ou usar `sessionStorage.setItem('preloaderShown', true)` — verificar na inicialização e pular animação se flag existe",
+      "Accordion com estado persistido: guardar aba ativa no sessionStorage ao clicar e restaurar ao carregar — usuário volta da page de case e encontra o mesmo case aberto",
+      "Fotos de premiações integradas ao layout inline: imagens no fluxo do texto em vez de galeria separada — mais natural para leitura de case, melhor storytelling visual",
+      "object-position: center 35% para ajustar enquadramento de foto landscape em container fixo — controla qual parte da imagem aparece sem recortar o arquivo"
+    ],
+    "toolsUsed": ["Read", "Edit"],
+    "skillsUsed": ["seo-audit"],
+    "agentsUsed": [],
+    "commit": "3e2387b",
+    "version": "cases individuais — 5 pages, SEO, sitemap, scroll reveal, accordion state",
+    "highlight": "Abordagem de site pessoal com pages de case separadas maximiza SEO sem complexidade de build. Persistência de estado do accordion via sessionStorage é padrão simples mas de alto impacto na experiência."
+  },
+  {
+    "id": "log-010",
+    "date": "2026-03-17",
+    "project": "claude-dashboard",
+    "title": "Auditoria de segurança completa — 7 projetos revisados, 5 correções aplicadas",
+    "learned": [
+      "Launch Agent do macOS cacheia os ProgramArguments no plist — alterar start.sh não tem efeito; precisa editar o .plist e fazer unload/load para aplicar mudanças",
+      "python3 -m http.server sem --bind escuta em todas as interfaces (IPv6 *:8080) — qualquer dispositivo na rede local consegue acessar; corrigido com --bind 127.0.0.1",
+      "Vercel Functions e servidor Express dev têm stacks separados — CORS e OPTIONS precisam ser implementados nos dois arquivos independentemente (api/chat/stream.ts e server/index.ts)",
+      "vercel.json suporta seção 'headers' para injetar security headers (X-Content-Type-Options, X-Frame-Options, Referrer-Policy) em todas as rotas sem alterar código",
+      "GitHub Actions com actions/checkout@v4 (tag mutável) é vetor de supply chain attack — prática segura é pinnar à SHA do commit",
+      "Sites estáticos puros (magma, thiago-zeni) não têm vetores de ataque relevantes — zero backend, zero dependências externas, zero variáveis de ambiente",
+      "Projetos sem git não precisam de .gitignore — mas werdum-fight (sem git ainda) precisará de um ao ser inicializado; criado preventivamente"
+    ],
+    "toolsUsed": ["Read", "Edit", "Bash", "Agent"],
+    "skillsUsed": [],
+    "agentsUsed": ["code-reviewer"],
+    "commit": null,
+    "version": "hardening — dashboard bind 127.0.0.1, CORS Vercel Function, security headers, .gitignore werdum-fight",
+    "highlight": "Primeira auditoria de segurança dos projetos. Principal achado: dashboard HTTP exposto na rede local (corrigido). eat-kitchen-concierge recebeu CORS, OPTIONS handler e security headers via vercel.json."
+  },
+  {
+    "id": "log-009",
+    "date": "2026-03-17",
+    "project": "claude-dashboard",
+    "title": "Auditoria completa de todos os projetos + pesquisa dos top criadores de Claude Code no YouTube",
+    "learned": [
+      "IndyDevDan é o criador mais assertivo sobre Claude Code no YouTube (~85-90% dos vídeos focados) — construiu framework próprio de 'agentic engineering' com cursos pagos e repositórios GitHub",
+      "Sabrina Ramonov é a melhor referência para iniciantes: tutoriais completos e gratuitos orientados a workflows reais de negócio",
+      "John Kim (Push to Prod, ex-Meta Staff Engineer) é subavaliado — usa Claude Code 12h/dia em produção real, conteúdo técnico autêntico",
+      "Fireship, Liam Ottley e Matthew Berman têm cobertura superficial ou periférica de Claude Code — bons para awareness, fracos para aprendizado técnico",
+      "Firecrawl instalado como plugin do Claude Code (claude plugin install firecrawl) — backend via firecrawl-cli npm, API key no .zshrc",
+      "Agentes frontend-dev e backend-dev reabilitados com gestão estratégica: um por vez, escopo delimitado, confirmar entrega antes de encadear outro",
+      "O incidente de créditos consumidos sem entrega foi causado por múltiplos sub-agentes em paralelo sem controle — não por incapacidade dos agentes",
+      "Sub-agentes são o mesmo modelo (Sonnet/Opus) em contexto isolado — não são 'melhores', mas evitam poluir o contexto principal com pesquisas longas",
+      "werdum-fight ganhou novos sprites: Thor (punch/hit/walk/block/kick/knockdown), Werdum (kick/knockdown), Dida (knockdown) + cenário gerado pelo Gemini",
+      "magma tem arquivos de vídeo não commitados: video-fx/Zoom_out e pasta videos/ — revisar antes de commitar para não incluir binários grandes no git"
+    ],
+    "toolsUsed": ["Read", "Bash", "Edit", "Agent", "WebSearch", "WebFetch"],
+    "skillsUsed": [],
+    "agentsUsed": ["general-purpose"],
+    "commit": null,
+    "version": "dashboard v2 — evolution-log completo, firecrawl integrado, agentes reabilitados, pesquisa YouTube Claude Code",
+    "highlight": "Sessão de auto-aprimoramento completa: auditoria de 7 projetos, 8 entradas no evolution-log, pesquisa dos 10 melhores criadores de Claude Code no YouTube com avaliação de 20 vídeos por canal. IndyDevDan identificado como referência técnica máxima."
+  },
+  {
+    "id": "log-008",
+    "date": "2026-03-17",
+    "project": "thiago-zeni",
+    "title": "Audit: site pessoal — design premium com identidade visual própria",
+    "learned": [
+      "Triple-font system: Unbounded (display/headlines) + DM Sans (body) + Cormorant Garamond (serif accent) — combinação que mistura brutalismo e elegância",
+      "Electric Lime (#C6FF00) como único accent em dark background — impacto visual alto com uma única cor, reduz a necessidade de paleta complexa",
+      "Site single-file (index.html) com Google Analytics G-F44T3HG5PZ — abordagem sem build system funciona bem para sites pessoais de página única",
+      "Cases em pasta _cases como .rtf e .docx — conteúdo estruturado fora do HTML permite atualização independente do design",
+      "Último commit: 4a0d8c1 — atualização de case Florense com período 2024-2025 e aviso de NDA"
+    ],
+    "toolsUsed": ["Read", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "4a0d8c1",
+    "version": "site pessoal ativo — cases, perfil, Google Analytics",
+    "highlight": "Site pessoal de posicionamento profissional com identidade visual premium. Single-file, zero dependências, fácil de manter."
+  },
+  {
+    "id": "log-007",
+    "date": "2026-03-17",
+    "project": "magma",
+    "title": "Audit: site histórico da banda — animações avançadas sem framework",
+    "learned": [
+      "Split text characters com CSS transform: cada caractere em .char-wrap + .char, transição translateY(108% → 0) ativada por IntersectionObserver via data-split — efeito de reveal de texto sem biblioteca externa",
+      "Clip-path reveal para imagens: polygon(0 100%, 100% 100%...) → polygon(0 0, 100% 0...) com transition de 0.9s — alternativa elegante ao fade para revelar imagens",
+      "Lenis para smooth scroll + scroll-behavior: auto no CSS — os dois não coexistem; quando Lenis está ativo, o nativo precisa ser desativado",
+      "Marquee CSS puro com overflow:hidden + animação de translateX — sem JavaScript, loop infinito via animation-iteration-count: infinite",
+      "Design system: --accent #E05A1A (laranja) + --gold #C87A2A + --bg #080808 — paleta rock pesado com apenas 2 cores de destaque",
+      "Último commit: c75d346 — ajuste de título da página"
+    ],
+    "toolsUsed": ["Read", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "c75d346",
+    "version": "site histórico completo — animações, galeria, timeline da banda",
+    "highlight": "Site estático com animações avançadas CSS puras (clip-path, split text, marquee) sem nenhuma dependência JavaScript de animação. Técnica aplicável a outros projetos."
+  },
+  {
+    "id": "log-006",
+    "date": "2026-03-17",
+    "project": "alugueis-bea",
+    "title": "Audit: automação de extração de PDFs de imobiliárias — pipeline Python",
+    "learned": [
+      "Multi-format PDF parsing por detecção de conteúdo: detectar_formato() usa strings específicas no texto (ex: 'Vila Rica', 'Lasserra', 'Ritzel') para selecionar o parser correto — mais robusto que detecção por nome de arquivo",
+      "pdfplumber com senha: tentativa sem senha primeiro, depois com lista de senhas — permite processar PDFs mistos (com e sem proteção) no mesmo pipeline",
+      "Parser por blocos com regex: dividir texto bruto por marcadores de início de bloco (ex: código de imóvel com 4-5 dígitos) antes de extrair campos — mais confiável que tentar parsear o documento inteiro",
+      "Caso especial de ambiguidade: dois imóveis com ID '701' em ruas diferentes → '701' (Confraternização) e '701-JA' (Júlio Aichinger) — lógica adicional por regex no texto do bloco",
+      "Pipeline Unix-friendly: extrator-pdf.py | preencher-planilha.py via stdin/stdout — composição de scripts sem arquivos temporários",
+      "Proteção contra sobrescrita: verificar valor existente na célula J antes de escrever; ignorar fórmulas (string com '='); reportar conflitos sem sobrescrever automaticamente",
+      "openpyxl com auto-install: subprocess.run pip install se ImportError — script autocontido sem necessidade de setup prévio"
+    ],
+    "toolsUsed": ["Read", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "pipeline completo: extrator 3 imobiliárias + preenchimento XLSX automático",
+    "highlight": "Pipeline de automação contábil: PDFs de 3 imobiliárias diferentes → JSON normalizado → XLSX preenchido automaticamente. Zero frameworks, só stdlib Python + pdfplumber + openpyxl."
+  },
+  {
+    "id": "log-005",
+    "date": "2026-03-17",
+    "project": "eat-kitchen-concierge",
+    "title": "Audit: AI concierge gastronômico — React + Gemini Flash com streaming SSE",
+    "learned": [
+      "Gemini Flash via Google GenAI SDK (não Claude API): `@google/genai` + `gemini-flash-latest` com system instruction detalhada — alternativa ao Claude para apps de custo menor com resposta rápida",
+      "Streaming SSE manual: server escreve `data: ${JSON.stringify({ text })}\n\n`, frontend lê via ReadableStream + TextDecoder com buffer de linha para lidar com chunks parciais",
+      "Histórico de chat gerenciado no cliente: EatKitchenAI mantém `history: HistoryEntry[]` localmente, enviado a cada request — stateless backend, stateful frontend",
+      "DishImage com WebP derivado: `src.replace(/\\.png$/i, '-${size}w.webp')` gera srcSet responsivo (400w/800w/1200w) a partir do PNG original sem assets duplicados no código",
+      "Strong tags clicáveis via markdownComponents: detecta padrão `/^\\d+\\.\\s/` no texto do strong — numeração de pratos vira botão que dispara handleSend automaticamente",
+      "Confirmação de ação destrutiva: requestAction() verifica `messages.length > 1` antes de mostrar modal — evita confirmação desnecessária em conversas vazias",
+      "CORS restrito + validação de inputs: ALLOWED_ORIGIN por env var, history limitado a 40 entradas, 8000 chars/parte — hardening de segurança no backend",
+      "i18n de 8 idiomas via TRANSLATIONS object estático — sem biblioteca, apenas Record<Language, TranslationObj>"
+    ],
+    "toolsUsed": ["Read", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "de20e1a",
+    "version": "concierge completo — 8 idiomas, streaming, fotos WebP, deploy Vercel",
+    "highlight": "Concierge de restaurante com React + Gemini Flash. Técnica de strong clicável para seleção de pratos e streaming SSE manual são padrões reutilizáveis em outros projetos de chat."
+  },
+  {
+    "id": "log-004",
+    "date": "2026-03-17",
+    "project": "cachorradas-estudios",
+    "title": "Audit: site do canal YouTube — automação de conteúdo via GitHub Actions",
+    "learned": [
+      "Injeção de HTML via marcadores em comentários: `<!-- STATS:START -->...<!-- STATS:END -->` + regex re.sub com re.DOTALL — padrão para atualizar seções de um HTML estático sem parser DOM",
+      "YouTube Data API v3 em 3 chamadas: channels (stats) → search (IDs dos vídeos recentes) → videos (detalhes por IDs) — search não retorna estatísticas, precisa de segunda chamada de videos",
+      "Detecção de série por regex no título: `GUERRA DOS DIAMANTE|GDV`, `METALLICA SLAYER`, `E SE` — cada série tem classe CSS e tema visual próprios (cat-mag, cat-blue, t-mix)",
+      "GitHub Actions com permissão de escrita explícita: o workflow precisa de `permissions: contents: write` para fazer commit das mudanças no HTML — erro silencioso se não configurado",
+      "stdlib Python puro (urllib.request, re, json, html) sem requests/beautifulsoup — zero dependências externas no script de automação",
+      "Google Analytics integrado (G-GQ2DERV731) no site estático"
+    ],
+    "toolsUsed": ["Read", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": "d6888d9",
+    "version": "site ativo — automação diária YouTube API via GitHub Actions",
+    "highlight": "Padrão de atualização de HTML estático com marcadores de comentário é reutilizável em qualquer projeto que precise de conteúdo dinâmico sem build system."
+  },
+  {
+    "id": "log-003",
+    "date": "2026-03-17",
+    "project": "werdum-fight",
+    "title": "Retrospectiva técnica — beat'em up completo com Phaser 3 + TypeScript",
+    "learned": [
+      "Perspectiva 2.5D em beat'em up: personagens crescem via Phaser.Math.Linear(204, 420, t) baseado em groundY normalizado — cache com _lastScaleY evita recalcular quando Y não mudou",
+      "Separação groundY vs visualY: hit detection e depth sorting usam _groundY (posição lógica no ringue), enquanto y visual inclui jumpOffset — resolve um problema clássico do gênero",
+      "Colisão elíptica com objeto de cena: enforceWandCollision() usa equação de elipse para empurrar personagens para a borda sem usar physics engine — simples e preciso",
+      "AI por máquina de estados com aggro system: inimigos alternam entre approach/waitBeforeAttack/chasePlayer/knockdown/recover. Se o jogador atacar, o inimigo troca de alvo por 3 segundos",
+      "Boss phase 2 por threshold de HP: boss_popo ganha +40% velocidade e muda de tint quando HP < 100 — padrão simples de escalada de dificuldade",
+      "Separação física entre inimigos com applySeparationForce() — força proporcional à sobreposição, sem usar grupo de colisão Phaser, mantém todos dentro do RING",
+      "Sistema de combo com multiplicador de score: comboCount acumula dentro de COMBO_WINDOW (2500ms), multiplica dano (1.5x em 3+, 2x em 5+) e score (floor(combo/2))",
+      "Textura de partícula gerada em runtime via Graphics.generateTexture — evita asset externo para o spark de hit",
+      "Spritesheets com frameWidth variável por ação: idle=160px, punch=192/224px, kick=224/384px — cada animação tem dimensão própria para acomodar o alcance do movimento",
+      "Animações compartilhadas entre Player e Ally: Ally.createAnimations() verifica ac.exists() antes de criar, aproveitando o cache do Player se ele foi instanciado primeiro"
+    ],
+    "toolsUsed": ["Read"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "0.1.0 — wave system completo, 3 personagens jogáveis, 3 bosses, virtual joystick, perspectiva 2.5D",
+    "highlight": "Jogo beat'em up completo com 12 waves, 3 personagens, 7 tipos de inimigos/bosses, perspectiva 2.5D, AI por estados, sistema de combo e suporte a teclado + joystick virtual."
+  },
+  {
+    "id": "log-002",
+    "date": "2026-03-17",
+    "project": "claude-dashboard",
+    "title": "Avaliação de skills nano-banana e descoberta do MCP gemini-image",
+    "learned": [
+      "nano-banana tem duas implementações: ShinChven (para Gemini app, não Claude Code) e kkoppenhaver (para Claude Code, mas imatura — 5 commits, 3 issues)",
+      "MCP gemini-image já está conectado no ambiente com generate_image e edit_image — substitui a necessidade de instalar cc-nano-banana",
+      "Antes de instalar qualquer skill externa, verificar se o ambiente já possui a capacidade via MCP ou ferramenta nativa"
+    ],
+    "toolsUsed": ["WebFetch"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "gemini-image mapeado, firecrawl avaliado",
+    "highlight": "Capacidade de geração de imagens já disponível — mapeada e adicionada ao dashboard."
+  },
+  {
+    "id": "log-001",
+    "date": "2026-03-17",
+    "project": "claude-dashboard",
+    "title": "Seção Evolução implementada",
+    "learned": [
+      "Sub-navegação por tabs em JS vanilla sem framework",
+      "Estrutura de dados para tracking de habilidades, frequência e níveis 1–5",
+      "Padrão de sugestão de depreciação baseado em análise de uso real",
+      "Cron job para reflexão diária com coleta automática de git logs"
+    ],
+    "toolsUsed": ["Read", "Edit", "Write", "Bash"],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "seção Evolução — bootstrap do sistema de auto-aprimoramento",
+    "highlight": "Bootstrap do sistema de auto-aprimoramento. Primeira vez que o dashboard ganha capacidade reflexiva."
+  }
+]

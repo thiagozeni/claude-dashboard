@@ -1,0 +1,110 @@
+[
+  {
+    "id": "general-purpose",
+    "name": "general-purpose",
+    "description": "Agente de uso geral para pesquisa de questões complexas, busca em código e tarefas multi-etapa. Use quando precisar de busca ampla em codebase.",
+    "tools": ["*"],
+    "useCases": ["Pesquisa em codebase grande", "Busca de keywords em múltiplos arquivos", "Tarefas multi-etapa autônomas"],
+    "model": "inherit",
+    "modelNote": "Herda o modelo ativo na sessão"
+  },
+  {
+    "id": "explore",
+    "name": "Explore",
+    "description": "Agente rápido especializado em explorar codebases — busca por padrões de arquivo, palavras-chave ou perguntas sobre a estrutura do projeto.",
+    "tools": ["Glob", "Grep", "Read", "Bash", "WebSearch", "WebFetch"],
+    "useCases": ["Encontrar arquivos por padrão", "Buscar keyword em código", "Entender como funcionalidade foi implementada"],
+    "model": "inherit",
+    "modelNote": "Herda o modelo ativo na sessão"
+  },
+  {
+    "id": "plan",
+    "name": "Plan",
+    "description": "Arquiteto de software para desenhar planos de implementação — retorna planos passo-a-passo, arquivos críticos e trade-offs arquiteturais.",
+    "tools": ["Glob", "Grep", "Read", "Bash", "WebSearch", "WebFetch"],
+    "useCases": ["Planejar nova feature", "Definir arquitetura", "Avaliar abordagens antes de codar"],
+    "model": "inherit",
+    "modelNote": "Herda o modelo ativo na sessão"
+  },
+  {
+    "id": "claude-code-guide",
+    "name": "claude-code-guide",
+    "description": "Especialista em Claude Code CLI, Claude Agent SDK e Claude API — features, hooks, slash commands, MCP servers, settings, IDE integrations.",
+    "tools": ["Glob", "Grep", "Read", "WebFetch", "WebSearch"],
+    "useCases": ["Dúvidas sobre Claude Code CLI", "Como usar o Agent SDK", "Como usar a API Anthropic"],
+    "model": "inherit",
+    "modelNote": "Herda o modelo ativo na sessão"
+  },
+  {
+    "id": "code-reviewer",
+    "name": "code-reviewer",
+    "description": "Revisor de código e debugger — identifica bugs, investiga erros, analisa qualidade/segurança e sugere melhorias antes do commit.",
+    "tools": ["Read", "Grep", "Glob", "Bash"],
+    "useCases": ["Revisar código implementado", "Investigar testes falhando", "Análise de segurança", "Sugestões de melhoria"],
+    "model": "sonnet",
+    "modelNote": "claude-sonnet-4-6"
+  },
+  {
+    "id": "ux-designer",
+    "name": "ux-designer",
+    "description": "Especialista em design de interfaces, UX e acessibilidade — layouts, hierarquia visual, componentes, paletas, tipografia e fluxos de navegação.",
+    "tools": ["Read", "Grep", "Glob"],
+    "useCases": ["Revisar layout e hierarquia visual", "Propor melhorias de UX", "Acessibilidade", "Design system"],
+    "model": "sonnet",
+    "modelNote": "claude-sonnet-4-6"
+  },
+  {
+    "id": "git-assistant",
+    "name": "git-assistant",
+    "description": "Especialista em git — analisa diffs, prepara commits, organiza staging area, verifica histórico e prepara código para push.",
+    "tools": ["Bash", "Read", "Grep"],
+    "useCases": ["Redigir mensagens de commit", "Analisar diff antes do commit", "Organizar staging", "Verificar histórico"],
+    "model": "haiku",
+    "modelNote": "claude-haiku-4-5"
+  },
+  {
+    "id": "copywriter",
+    "name": "copywriter",
+    "description": "Redator especializado em conteúdo publicitário, jornalístico e digital — sites, produtos, posts, títulos, CTAs, descrições de vídeo, marketing.",
+    "tools": ["Read", "Write", "WebSearch"],
+    "useCases": ["Textos de site", "Descrições de produto", "Posts e títulos", "Descrições de vídeo YouTube"],
+    "model": "sonnet",
+    "modelNote": "claude-sonnet-4-6"
+  },
+  {
+    "id": "frontend-dev",
+    "name": "frontend-dev",
+    "description": "Desenvolvedor especializado em front-end — interfaces, componentes, CSS, JavaScript, integração com APIs no cliente, React e HTML semântico.",
+    "tools": ["Read", "Edit", "Write", "Grep", "Glob", "Bash"],
+    "useCases": ["Implementar interfaces e componentes", "Estilização CSS", "Integração de API no cliente", "React e HTML"],
+    "model": "sonnet",
+    "modelNote": "claude-sonnet-4-6"
+  },
+  {
+    "id": "planner",
+    "name": "planner",
+    "description": "Especialista em planejamento de apps, arquitetura e pesquisa web — planeja features, define arquitetura, escolhe tecnologias e levanta requisitos.",
+    "tools": ["Read", "Grep", "Glob", "WebSearch", "WebFetch"],
+    "useCases": ["Planejar nova funcionalidade", "Escolher tecnologia", "Pesquisar bibliotecas", "Levantar requisitos"],
+    "model": "opus",
+    "modelNote": "claude-opus-4-6"
+  },
+  {
+    "id": "backend-dev",
+    "name": "backend-dev",
+    "description": "Programador especializado em back-end, APIs, modelagem de banco de dados e arquitetura server-side.",
+    "tools": ["Read", "Edit", "Write", "Grep", "Glob", "Bash"],
+    "useCases": ["Implementar rotas e lógica de negócio", "Queries SQL", "Modelagem de dados", "Autenticação", "Integrações externas"],
+    "model": "sonnet",
+    "modelNote": "claude-sonnet-4-6"
+  },
+  {
+    "id": "statusline-setup",
+    "name": "statusline-setup",
+    "description": "Configura o status line do Claude Code — modifica ~/.claude/keybindings.json para personalizar a linha de status.",
+    "tools": ["Read", "Edit"],
+    "useCases": ["Configurar status line do Claude Code"],
+    "model": "inherit",
+    "modelNote": "Herda o modelo ativo na sessão"
+  }
+]

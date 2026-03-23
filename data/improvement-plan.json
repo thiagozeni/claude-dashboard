@@ -1,0 +1,167 @@
+[
+  {
+    "id": "plan-001",
+    "type": "aprimoramento",
+    "title": "Gestão estratégica de subagentes — usar frontend-dev e backend-dev com escopo delimitado",
+    "description": "Agentes foram reabilitados após revisão: a restrição original era sobre gestão de recursos (múltiplos agentes em paralelo consumindo todos os créditos), não sobre capacidade dos agentes. Usar individualmente com tarefas bem definidas.",
+    "impact": "alta",
+    "effort": "baixa",
+    "status": "concluido",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-002",
+    "type": "deprecacao",
+    "title": "Desativar skill slack-gif-creator",
+    "description": "Skill sem nenhum uso registrado e sem alinhamento com o perfil atual de projetos. Remove ruído desnecessário do catálogo.",
+    "impact": "baixa",
+    "effort": "baixa",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-003",
+    "type": "deprecacao",
+    "title": "Desativar skill brand-guidelines",
+    "description": "Aplica brand visual da Anthropic — sem aplicação nos projetos atuais, todos com identidade visual própria.",
+    "impact": "baixa",
+    "effort": "baixa",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-004",
+    "type": "deprecacao",
+    "title": "Desativar skill internal-comms",
+    "description": "Skill para comunicações corporativas internas. Perfil de trabalho é pessoal/freelance — nenhum projeto demanda este tipo de comunicação.",
+    "impact": "baixa",
+    "effort": "baixa",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-005",
+    "type": "deprecacao",
+    "title": "Desativar MCP Zapier",
+    "description": "MCP com apenas 1 ferramenta e zero usos registrados. Sem projeto atual que justifique manter a conexão ativa. Fácil reativar se surgir necessidade.",
+    "impact": "baixa",
+    "effort": "baixa",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-006",
+    "type": "aprimoramento",
+    "title": "Explorar Canva MCP para thumbnails do cachorradas-estudios",
+    "description": "O MCP do Canva tem 31 ferramentas ainda inexploradas. O canal publica vídeos regularmente (GDV, Metallica Slayer, E SE???) — automatizar criação de thumbnails com brand consistente seria alto impacto.",
+    "impact": "alta",
+    "effort": "média",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-007",
+    "type": "aprimoramento",
+    "title": "Integrar Figma MCP ao fluxo de design",
+    "description": "Usar o MCP do Figma para leitura de layouts antes de implementar interfaces — melhora fidelidade ao design original e reduz retrabalho.",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-008",
+    "type": "desenvolvimento",
+    "title": "Criar skill para análise do canal YouTube",
+    "description": "Skill personalizada que combina YouTube Data API + análise de conteúdo + sugestões de séries para o @CachorradasEstudios. Extensão do script existente.",
+    "impact": "alta",
+    "effort": "alta",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-009",
+    "type": "aprimoramento",
+    "title": "Usar agente ux-designer em revisões de interface",
+    "description": "Sub-agent especializado em UX ainda não foi acionado em nenhuma sessão. Incorporar no fluxo de revisão de interfaces antes de finalizar implementações.",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-010",
+    "type": "aprimoramento",
+    "title": "Migrar eat-kitchen-concierge de Gemini Flash para Claude Haiku",
+    "description": "O backend usa @google/genai + gemini-flash-latest. Claude Haiku tem custo similar e permitiria usar o mesmo SDK já dominado (claude-api skill). Avaliação de custo/benefício necessária — Gemini Flash pode ser mais barato.",
+    "impact": "média",
+    "effort": "média",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-011",
+    "type": "aprimoramento",
+    "title": "Adicionar reutilização do padrão de streaming SSE do eat-kitchen-concierge",
+    "description": "O padrão de streaming SSE manual implementado no eat-kitchen-concierge (buffer de linha, ReadableStream, TextDecoder) é robusto e reutilizável. Documentar como template para futuros projetos de chat com IA.",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-012",
+    "type": "aprimoramento",
+    "title": "Aplicar padrão de marcadores HTML do cachorradas-estudios em outros sites estáticos",
+    "description": "O padrão `<!-- SECTION:START -->...<!-- SECTION:END -->` + regex re.sub permite atualizar seções de HTML estático programaticamente. Útil para magma e thiago-zeni se precisarem de conteúdo dinâmico sem build system.",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-013",
+    "type": "aprimoramento",
+    "title": "Automatizar execução do pipeline alugueis-bea com agendamento",
+    "description": "O pipeline extrator-pdf.py | preencher-planilha.py é manual. Criar um script de entrada que processe automaticamente PDFs novos na pasta do mês atual. Possível integração com cron ou watchdog.",
+    "impact": "alta",
+    "effort": "média",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-014",
+    "type": "aprimoramento",
+    "title": "Aplicar técnicas de animação do magma em werdum-fight e outros projetos",
+    "description": "O magma implementou clip-path reveal, split text por caractere e marquee CSS puro sem dependências. Estas técnicas são reutilizáveis na tela de título/seleção do werdum-fight ou em landing pages.",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  },
+  {
+    "id": "plan-015",
+    "type": "desenvolvimento",
+    "title": "Inicializar git no werdum-fight para rastreamento de versões",
+    "description": "werdum-fight não tem repositório git. Sem histórico de commits, é impossível rastrear evolução do jogo, fazer rollback ou comparar versões. Inicializar git + .gitignore (node_modules, dist) seria baixo esforço e alto ganho.",
+    "impact": "alta",
+    "effort": "baixa",
+    "status": "concluido",
+    "suggestedBy": "claude",
+    "date": "2026-03-17"
+  }
+]

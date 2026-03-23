@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "totalCalls": 9,
+    "byRoute": {
+      "coding": 5,
+      "reasoning": 2,
+      "research": 2,
+      "general": 0
+    },
+    "lastUsed": "2026-03-18"
+  },
+  "incidents": [
+    {
+      "id": "inc-001",
+      "date": "2026-03-15",
+      "type": "model-load",
+      "route": "reasoning",
+      "severity": "low",
+      "description": "DeepSeek-R1-Distill-Qwen-14B-4bit demorou ~45s para responder na primeira chamada do dia — modelo não estava em cache na memória.",
+      "resolved": true,
+      "resolution": "Comportamento esperado do MLX: primeiro carregamento é lento. Chamadas subsequentes são rápidas."
+    },
+    {
+      "id": "inc-002",
+      "date": "2026-03-16",
+      "type": "misclassification",
+      "route": "general",
+      "severity": "medium",
+      "description": "Prompt 'Como estruturar um projeto Python?' caiu em 'general' (Ollama) em vez de 'coding'. O classifier não reconheceu a intenção de código sem a keyword exata.",
+      "resolved": false,
+      "resolution": "Limitação do classifier por keywords. Solução futura: ampliar lista de keywords ou migrar para embedding-based."
+    },
+    {
+      "id": "inc-003",
+      "date": "2026-03-18",
+      "type": "api-error",
+      "route": "research",
+      "severity": "medium",
+      "description": "Gemini 2.5 Pro retornou erro 429 (quota excedida) ao tentar pesquisar sobre frameworks de testes. A chamada foi feita via Bash tool no Claude Code.",
+      "resolved": true,
+      "resolution": "Aguardou reset da quota (~1 minuto). Re-execução do comando foi bem-sucedida."
+    },
+    {
+      "id": "inc-004",
+      "date": "2026-03-19",
+      "type": "no-output",
+      "route": "coding",
+      "severity": "low",
+      "description": "Qwen2.5-Coder-7B truncou a resposta no meio de um bloco de código por atingir o limite de --max-tokens 500.",
+      "resolved": false,
+      "resolution": "Aumentar --max-tokens para chamadas que geram código. O valor atual (500) é conservador."
+    }
+  ]
+}
