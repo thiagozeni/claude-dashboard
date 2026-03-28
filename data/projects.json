@@ -19,9 +19,11 @@
     "highlights": [
       "GitHub Pages",
       "Auto-update diário 08h BRT",
-      "Séries: GDV, Metallica Slayer, E SE???"
+      "Séries: GDV, Metallica Slayer, E SE???",
+      "Seção Jogos com Werdum Fight Night",
+      "Segurança: .gitignore + histórico git limpo"
     ],
-    "lastActivity": "2026-03-15"
+    "lastActivity": "2026-03-27"
   },
   {
     "id": "eat-kitchen-concierge",
@@ -89,25 +91,28 @@
       "Sem build pipeline",
       "Dados em JSON"
     ],
-    "lastActivity": "2026-03-18"
+    "lastActivity": "2026-03-26"
   },
   {
     "id": "magma",
     "name": "Magma",
     "path": "/Users/pro15/Claude/magma",
-    "url": null,
+    "url": "https://bandamagma.com",
     "repo": null,
     "type": "Site Estático",
     "status": "active",
     "tech": [
       "HTML",
       "CSS",
-      "JavaScript"
+      "Google Fonts",
+      "Lenis",
+      "Google Analytics 4"
     ],
     "description": "Site histórico da banda Magma (Nova Hamburgo/RS, 2001–2025) — discografia, fotos, vídeos e memória da trajetória da banda.",
     "highlights": [
       "Site comemorativo",
-      "Sem dependências externas"
+      "Dark theme com accent laranja",
+      "Smooth scroll via Lenis"
     ],
     "lastActivity": "2026-03-18"
   },
@@ -115,7 +120,7 @@
     "id": "thiago-zeni",
     "name": "Thiago Zeni",
     "path": "/Users/pro15/Claude/thiago-zeni",
-    "url": null,
+    "url": "https://thiagozeni.com.br",
     "repo": null,
     "type": "Site Estático",
     "status": "active",
@@ -124,10 +129,11 @@
       "CSS",
       "JavaScript"
     ],
-    "description": "Site pessoal de Thiago Zeni — Marketing Digital & Liderança Executiva.",
+    "description": "Site pessoal de Thiago Zeni — 28 anos em Marketing Digital, Inovação e Inteligência Artificial. Porto Alegre · Florianópolis · São Paulo.",
     "highlights": [
-      "Site pessoal",
-      "Sem dependências externas"
+      "GitHub Pages + domínio customizado",
+      "SEO completo (OG, Twitter Card, JSON-LD)",
+      "robots.txt + sitemap.xml"
     ],
     "lastActivity": "2026-03-18"
   },
@@ -135,22 +141,26 @@
     "id": "werdum-fight",
     "name": "Werdum Fight",
     "path": "/Users/pro15/Claude/werdum-fight",
-    "url": null,
+    "url": "https://werdumfight.com",
     "repo": null,
     "type": "Game",
     "status": "active",
     "tech": [
       "TypeScript",
       "Vite",
-      "Phaser 3"
-    ],
-    "description": "Arena Beat'em Up inspirado em Streets of Rage e Final Fight, desenvolvido com Phaser 3.",
-    "highlights": [
-      "Arena Beat'em Up",
       "Phaser 3",
-      "Sprites e personagens customizados"
+      "GitHub Pages"
     ],
-    "lastActivity": "2026-03-18"
+    "description": "Arena Beat'em Up inspirado em Streets of Rage e Final Fight, desenvolvido com Phaser 3. Domínio próprio em werdumfight.com.",
+    "highlights": [
+      "Domínio customizado werdumfight.com",
+      "PWA com ícones e favicon",
+      "Cenário gameplay com vídeo de fundo",
+      "SEO completo — OG, Twitter Card, JSON-LD",
+      "Score e timer preservados no Continue",
+      "HUD pixel-perfect com coordenadas Figma"
+    ],
+    "lastActivity": "2026-03-27"
   },
   {
     "id": "ai-hub",

@@ -1,5 +1,44 @@
 [
   {
+    "id": "log-020",
+    "date": "2026-03-27",
+    "project": "cachorradas-estudios",
+    "title": "Auditoria de segurança — API key exposta, histórico git limpo, seção de jogos",
+    "learned": [
+      "Chaves Google/YouTube têm prefixo AIzaSy — padrão de busca útil para auditorias: git log -p --all | grep 'AIza'",
+      "git filter-repo --path arquivo --invert-paths --force reescreve o histórico inteiro removendo o arquivo de todos os commits — mais moderno e rápido que BFG",
+      "git filter-repo remove o remote origin como medida de segurança — necessário readicionar manualmente e fazer force push após a limpeza",
+      ".gitignore não tem efeito retroativo: arquivos já trackeados no index precisam de git rm --cached para sair do tracking — a regra no .gitignore só previne futuros adds",
+      "Chaves de API do Google devem ser restritas por API (YouTube Data API v3) e por HTTP referrer ou IP no Google Cloud Console",
+      "Seção de jogos adicionada ao site com card do Werdum Fight Night linkando para werdumfight.com"
+    ],
+    "toolsUsed": ["Bash", "Edit", "Agent"],
+    "skillsUsed": [],
+    "agentsUsed": ["code-reviewer"],
+    "commit": "c669a08",
+    "version": "security: .gitignore protegido + histórico git limpo + seção jogos",
+    "highlight": "Ciclo completo de resposta a incidente de segurança: detecção via alerta Google/GitHub → remoção da chave → limpeza do histórico git com filter-repo → proteção via .gitignore → nova chave com restrições. Processo replicável em qualquer projeto."
+  },
+  {
+    "id": "log-019",
+    "date": "2026-03-27",
+    "project": "werdum-fight",
+    "title": "v1.3 — domínio próprio, PWA, cenário com vídeo, SEO completo e fix do Continue",
+    "learned": [
+      "GitHub Pages com domínio customizado: criar arquivo CNAME com o domínio (sem https://) na raiz do repo — o DNS precisa de um CNAME record apontando para thiagozeni.github.io",
+      "PWA básico para jogo Phaser: manifest.json com name, icons (192x192 e 512x512), display standalone + link rel='manifest' no index.html — permite 'Add to Home Screen' sem service worker",
+      "Cenário com vídeo de fundo no Phaser 3: criar elemento <video> via DOM, posicionar com CSS absolute atrás do canvas, sincronizar com cena via create/shutdown do Phaser",
+      "Score e timer no Continue: estado mínimo necessário é currentScore + currentTime na GameScene — persistir no registry do Phaser (this.registry.set) para sobreviver à transição de cena",
+      "JSON-LD para jogo: usar @type VideoGame com gamePlatform, applicationCategory e screenshot — melhora rich snippets no Google para jogos"
+    ],
+    "toolsUsed": ["Read", "Edit", "Bash"],
+    "skillsUsed": ["seo-audit"],
+    "agentsUsed": [],
+    "commit": "8f43389",
+    "version": "v1.3 — werdumfight.com, PWA, vídeo no cenário, SEO, fix score/timer no Continue",
+    "highlight": "Werdum Fight passou de protótipo a produto: domínio próprio, PWA instalável, cenário com vídeo de fundo e SEO completo. O fix de score/timer no Continue é pequeno mas crítico para a experiência do jogador."
+  },
+  {
     "id": "log-014",
     "date": "2026-03-22",
     "project": "claude-dashboard",
