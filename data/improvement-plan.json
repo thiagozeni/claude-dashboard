@@ -163,5 +163,60 @@
     "status": "concluido",
     "suggestedBy": "claude",
     "date": "2026-03-17"
+  },
+  {
+    "id": "plan-016",
+    "type": "desenvolvimento",
+    "title": "Atualizar dados do dashboard para refletir expansão de skills e agentes",
+    "description": "Após instalação massiva de plugins (322 skills, 45 agentes, 126 commands), os arquivos JSON do dashboard foram atualizados com entries representativos das novas coleções (mkt-*, kwp-*, pm-skills, n8n-skills, sec-*, ai-research-*, everything-claude-code, claude-skills).",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "concluido",
+    "suggestedBy": "claude",
+    "date": "2026-03-30"
+  },
+  {
+    "id": "plan-017",
+    "type": "desenvolvimento",
+    "title": "Estruturar consultoria IA para agência de marketing — usar skills mkt-*, kwp-* e cs-marketing",
+    "description": "Com 34 skills de marketing instaladas (copywriting, CRO, SEO, ads, email, pricing, social), criar workflows específicos para os setores da agência: criação, planejamento, mídia, atendimento e analytics.",
+    "impact": "alta",
+    "effort": "média",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-30"
+  },
+  {
+    "id": "plan-018",
+    "type": "desenvolvimento",
+    "title": "Explorar n8n-skills para automação de processos da agência",
+    "description": "7 skills n8n instaladas (workflow-patterns, node-configuration, code-python, code-javascript, validation-expert, etc.). Mapear processos repetitivos da agência que podem ser automatizados via n8n.",
+    "impact": "alta",
+    "effort": "alta",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-30"
+  },
+  {
+    "id": "plan-019",
+    "type": "aprimoramento",
+    "title": "Usar ai-research-* skills para aprofundar conhecimento técnico em IA",
+    "description": "28 módulos de pesquisa em IA instalados cobrindo fine-tuning, RAG, prompt engineering, MLOps, inferência, avaliação e multimodal. Usar para embasar recomendações técnicas na consultoria.",
+    "impact": "alta",
+    "effort": "baixa",
+    "status": "sugestao",
+    "suggestedBy": "claude",
+    "date": "2026-03-30"
+  },
+  {
+    "id": "plan-020",
+    "type": "desenvolvimento",
+    "title": "Configurar exa-mcp-server para pesquisa web profunda",
+    "description": "exa-mcp-server está no Grupo 2 (avaliar). Verificar necessidade de chave API exa.ai e configurar .mcp.json se houver casos de uso concretos na consultoria (monitoramento de marca, pesquisa competitiva).",
+    "impact": "média",
+    "effort": "baixa",
+    "status": "backlog",
+    "suggestedBy": "claude",
+    "date": "2026-03-30"
   }
 ]

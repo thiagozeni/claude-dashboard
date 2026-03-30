@@ -1,5 +1,26 @@
 [
   {
+    "id": "log-021",
+    "date": "2026-03-30",
+    "project": "claude-dashboard",
+    "title": "Expansão massiva — everything-claude-code + 8 coleções de plugins curados instaladas",
+    "learned": [
+      "Plugin marketplace do Claude Code permite instalar coleções de skills/agents/commands via clone de repositórios GitHub — processo de merge seletivo evita conflitos com configurações customizadas",
+      "Prefixos por origem (mkt-, kwp-, sec-, ai-research-, cs-) são essenciais para organizar centenas de skills sem colisões de nome",
+      "Avaliação de plugins deve considerar 3 eixos: projetos atuais, perfil técnico e contexto de negócio futuro — no caso, consultoria de IA para agência de marketing",
+      "everything-claude-code é o plugin mais completo do ecossistema: 135+ skills, 30 agentes, 60 commands, rules por linguagem — instalado seletivamente preservando agentes customizados (code-reviewer, planner)",
+      "trailofbits/skills oferece 36 skills de segurança profissional mapeadas para auditoria de código, smart contracts, análise estática e supply chain — relevante para consultoria de IA",
+      "AI-Research-SKILLs cobre todo o ciclo de ML: arquitetura → tokenização → fine-tuning → inferência → MLOps → avaliação — 28 módulos especializados",
+      "claude-mem foi avaliado e descartado: instável com bugs ativos, e o sistema MEMORY.md já resolve a persistência de contexto de forma mais confiável e estruturada"
+    ],
+    "toolsUsed": ["Bash", "Agent", "Read", "Write", "WebFetch"],
+    "skillsUsed": [],
+    "agentsUsed": ["planner", "Explore"],
+    "commit": null,
+    "version": "expansão: 322 skills + 45 agentes + 126 commands instalados",
+    "highlight": "De 32 skills e 12 agentes para 322 skills e 45 agentes em uma sessão. A curadoria foi orientada pela nova frente de consultoria de IA para agência de marketing — priorizando marketing digital, product management, automação n8n, segurança e pesquisa em IA. O processo de avaliação dos 100 plugins da lista awesome-claude-plugins resultou em 17 instalados, 10 em stand-by e 73 descartados."
+  },
+  {
     "id": "log-020",
     "date": "2026-03-27",
     "project": "cachorradas-estudios",

@@ -174,5 +174,325 @@
     "category": "Utilitários",
     "description": "Revisa código alterado em busca de oportunidades de reuso, qualidade e eficiência, e corrige os problemas encontrados.",
     "trigger": "Após implementar código, peça para simplificar ou revisar qualidade"
+  },
+  {
+    "id": "mkt-copywriting",
+    "name": "mkt-copywriting",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Redação persuasiva para anúncios, landing pages, emails e redes sociais — frameworks AIDA, PAS, StoryBrand e copywriting de resposta direta.",
+    "trigger": "Peça copy de anúncio, landing page, email marketing ou qualquer texto persuasivo"
+  },
+  {
+    "id": "mkt-seo",
+    "name": "mkt-seo",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Estratégia e execução de SEO — pesquisa de palavras-chave, otimização on-page, link building, SEO técnico e análise de SERPs.",
+    "trigger": "Peça auditoria SEO, estratégia de palavras-chave ou otimização de conteúdo"
+  },
+  {
+    "id": "mkt-ads",
+    "name": "mkt-ads",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Criação e otimização de campanhas pagas — Google Ads, Meta Ads, TikTok Ads, estrutura de campanha, segmentação e análise de ROAS.",
+    "trigger": "Peça campanha de anúncios pagos, estrutura de ad set ou análise de performance de mídia"
+  },
+  {
+    "id": "mkt-cro",
+    "name": "mkt-cro",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Otimização de taxa de conversão — análise de funil, testes A/B, heatmaps, UX de conversão e melhoria de landing pages.",
+    "trigger": "Peça análise de conversão, teste A/B ou melhoria de funil de vendas"
+  },
+  {
+    "id": "mkt-email",
+    "name": "mkt-email",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Estratégia de email marketing — fluxos de automação, segmentação, sequências de nurturing, newsletters e métricas de deliverability.",
+    "trigger": "Peça sequência de email, fluxo de automação ou estratégia de newsletter"
+  },
+  {
+    "id": "mkt-social",
+    "name": "mkt-social",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Estratégia e conteúdo para redes sociais — calendário editorial, roteiros de Reels/TikTok, captions, hashtags e análise de engajamento.",
+    "trigger": "Peça calendário de conteúdo, roteiro de vídeo ou estratégia de redes sociais"
+  },
+  {
+    "id": "mkt-pricing",
+    "name": "mkt-pricing",
+    "origin": "marketingskills",
+    "category": "Marketing Digital",
+    "description": "Estratégia de precificação — ancoragem, freemium, pricing psicológico, análise competitiva de preços e modelagem de pacotes.",
+    "trigger": "Peça estratégia de preços, análise de pacotes ou precificação de produto/serviço"
+  },
+  {
+    "id": "kwp-brand-voice",
+    "name": "kwp-brand-voice",
+    "origin": "knowledge-work-plugins/marketing",
+    "category": "Marketing Digital",
+    "description": "Define e aplica voz de marca consistente — tom, personalidade, guia de estilo editorial e revisão de conteúdo com base na identidade da marca.",
+    "trigger": "Peça guia de tom de voz, revisão de conteúdo com brand voice ou definição de identidade editorial"
+  },
+  {
+    "id": "kwp-content-strategy",
+    "name": "kwp-content-strategy",
+    "origin": "knowledge-work-plugins/marketing",
+    "category": "Marketing Digital",
+    "description": "Planejamento estratégico de conteúdo — pilares de conteúdo, buyer journey mapping, distribuição multicanal e métricas de content marketing.",
+    "trigger": "Peça estratégia de conteúdo, pilares editoriais ou plano de content marketing"
+  },
+  {
+    "id": "pm-discovery",
+    "name": "pm-discovery",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Frameworks de discovery de produto — Jobs-to-be-Done, entrevistas com usuários, problem framing, oportunidade x solução e validação de hipóteses.",
+    "trigger": "Peça discovery de produto, entrevista de usuário, JTBD ou validação de problema"
+  },
+  {
+    "id": "pm-roadmap",
+    "name": "pm-roadmap",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Criação e gestão de roadmap de produto — priorização (RICE, ICE, MoSCoW), alinhamento com OKRs, comunicação de roadmap para stakeholders.",
+    "trigger": "Peça roadmap de produto, priorização de features ou alinhamento com OKRs"
+  },
+  {
+    "id": "pm-prd",
+    "name": "pm-prd",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Redação de PRDs (Product Requirements Documents) — estrutura completa com contexto, problema, solução, métricas de sucesso, escopo e critérios de aceite.",
+    "trigger": "Peça PRD, spec de produto, documento de requisitos ou definição de feature"
+  },
+  {
+    "id": "pm-metrics",
+    "name": "pm-metrics",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Definição e análise de métricas de produto — North Star Metric, AARRR, retenção, engajamento, funil e frameworks de análise quantitativa.",
+    "trigger": "Peça definição de métricas, North Star, análise de retenção ou funil de produto"
+  },
+  {
+    "id": "pm-strategy",
+    "name": "pm-strategy",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Estratégia de produto — visão, missão, posicionamento, análise competitiva, product-market fit e go-to-market para novos produtos.",
+    "trigger": "Peça estratégia de produto, análise competitiva, posicionamento ou visão de produto"
+  },
+  {
+    "id": "pm-agile",
+    "name": "pm-agile",
+    "origin": "pm-skills",
+    "category": "Product Management",
+    "description": "Gestão ágil de produto — refinamento de backlog, escrita de user stories, critérios de aceite, sprint planning e retrospectivas.",
+    "trigger": "Peça user stories, refinamento de backlog, sprint planning ou cerimônias ágeis"
+  },
+  {
+    "id": "n8n-workflow-patterns",
+    "name": "n8n-workflow-patterns",
+    "origin": "n8n-skills",
+    "category": "n8n & Automação",
+    "description": "Padrões de design para workflows n8n — triggers, branching condicional, error handling, retry logic e orquestração de automações complexas.",
+    "trigger": "Peça workflow n8n, automação de processo ou padrão de orquestração"
+  },
+  {
+    "id": "n8n-node-configuration",
+    "name": "n8n-node-configuration",
+    "origin": "n8n-skills",
+    "category": "n8n & Automação",
+    "description": "Configuração avançada de nodes n8n — HTTP Request, Webhook, Function, Set, IF, Switch, Merge e integração com APIs externas.",
+    "trigger": "Peça configuração de node n8n, integração de API ou setup de webhook"
+  },
+  {
+    "id": "n8n-code-python",
+    "name": "n8n-code-python",
+    "origin": "n8n-skills",
+    "category": "n8n & Automação",
+    "description": "Escrita de código Python no node Code do n8n — transformação de dados, chamadas a APIs, parsing de JSON/XML e lógica customizada.",
+    "trigger": "Peça código Python para node n8n ou transformação de dados em automação"
+  },
+  {
+    "id": "n8n-code-javascript",
+    "name": "n8n-code-javascript",
+    "origin": "n8n-skills",
+    "category": "n8n & Automação",
+    "description": "Escrita de código JavaScript no node Code do n8n — manipulação de arrays, objetos, chamadas fetch e lógica de transformação de dados.",
+    "trigger": "Peça código JavaScript para node n8n ou lógica de transformação"
+  },
+  {
+    "id": "n8n-validation-expert",
+    "name": "n8n-validation-expert",
+    "origin": "n8n-skills",
+    "category": "n8n & Automação",
+    "description": "Validação e tratamento de erros em workflows n8n — schemas de validação, error branches, logging de falhas e notificações de alertas.",
+    "trigger": "Peça validação de dados em n8n, error handling ou tratamento de falhas em workflow"
+  },
+  {
+    "id": "sec-code-audit",
+    "name": "sec-code-audit",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Auditoria de segurança de código — análise estática, identificação de vulnerabilidades (OWASP Top 10), revisão de autenticação e autorização.",
+    "trigger": "Peça auditoria de segurança, análise de vulnerabilidades ou revisão de código crítico"
+  },
+  {
+    "id": "sec-smart-contracts",
+    "name": "sec-smart-contracts",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Análise de segurança de smart contracts — reentrancy, overflow, access control, front-running e padrões de ataque em contratos Solidity/EVM.",
+    "trigger": "Peça análise de smart contract, auditoria Solidity ou revisão de segurança blockchain"
+  },
+  {
+    "id": "sec-threat-modeling",
+    "name": "sec-threat-modeling",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Modelagem de ameaças — STRIDE, árvores de ataque, análise de superfície de ataque, DFDs e mapeamento de controles de segurança.",
+    "trigger": "Peça threat model, análise de superfície de ataque ou mapeamento de riscos de segurança"
+  },
+  {
+    "id": "sec-supply-chain",
+    "name": "sec-supply-chain",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Segurança de supply chain de software — análise de dependências, SBOM, pinagem de versões, verificação de integridade e proteção contra typosquatting.",
+    "trigger": "Peça análise de supply chain, auditoria de dependências ou SBOM"
+  },
+  {
+    "id": "sec-static-analysis",
+    "name": "sec-static-analysis",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Análise estática de segurança — configuração de SAST tools (Semgrep, CodeQL, Bandit), criação de regras customizadas e interpretação de resultados.",
+    "trigger": "Peça análise estática, configuração de Semgrep/CodeQL ou criação de regras SAST"
+  },
+  {
+    "id": "sec-crypto-review",
+    "name": "sec-crypto-review",
+    "origin": "trailofbits/skills",
+    "category": "Segurança",
+    "description": "Revisão de implementações criptográficas — uso correto de algoritmos, gerenciamento de chaves, randomness, TLS/mTLS e padrões de autenticação.",
+    "trigger": "Peça revisão de criptografia, análise de autenticação segura ou uso de algoritmos crypto"
+  },
+  {
+    "id": "ai-research-architecture",
+    "name": "ai-research-architecture",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Arquiteturas de modelos de linguagem — Transformers, attention mechanisms, encoder-decoder, MoE, SSMs (Mamba) e comparações arquiteturais.",
+    "trigger": "Peça explicação de arquitetura de LLM, comparação de modelos ou design de transformer"
+  },
+  {
+    "id": "ai-research-finetuning",
+    "name": "ai-research-finetuning",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Fine-tuning de modelos de linguagem — SFT, RLHF, DPO, LoRA, QLoRA, datasets de treinamento, avaliação e estratégias de alinhamento.",
+    "trigger": "Peça fine-tuning, LoRA, RLHF, DPO ou estratégia de treinamento de LLM"
+  },
+  {
+    "id": "ai-research-rag",
+    "name": "ai-research-rag",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Retrieval-Augmented Generation — chunking, embeddings, vector databases, reranking, RAG avançado (HyDE, FLARE) e avaliação de pipelines RAG.",
+    "trigger": "Peça implementação de RAG, estratégia de chunking, vector store ou avaliação de retrieval"
+  },
+  {
+    "id": "ai-research-prompt-engineering",
+    "name": "ai-research-prompt-engineering",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Engenharia de prompts avançada — chain-of-thought, few-shot, tree-of-thoughts, self-consistency, prompt injection e técnicas de elicitação de raciocínio.",
+    "trigger": "Peça técnicas de prompt engineering, chain-of-thought ou otimização de prompts de sistema"
+  },
+  {
+    "id": "ai-research-mlops",
+    "name": "ai-research-mlops",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "MLOps e infraestrutura de IA — pipelines de treinamento, serving de modelos, monitoramento de drift, versionamento de datasets e CI/CD para ML.",
+    "trigger": "Peça pipeline MLOps, serving de modelo, monitoramento de ML ou infraestrutura de IA"
+  },
+  {
+    "id": "ai-research-evaluation",
+    "name": "ai-research-evaluation",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Avaliação de modelos de linguagem — benchmarks (MMLU, HumanEval, HellaSwag), métricas (BLEU, ROUGE, BERTScore), evals customizados e análise de falhas.",
+    "trigger": "Peça avaliação de LLM, benchmark, métricas de qualidade ou análise de alucinações"
+  },
+  {
+    "id": "ai-research-inference",
+    "name": "ai-research-inference",
+    "origin": "AI-Research-SKILLs",
+    "category": "AI Research",
+    "description": "Otimização de inferência — quantização (GPTQ, AWQ, GGUF), KV cache, batching dinâmico, especulative decoding e deployment em hardware Apple Silicon/CUDA.",
+    "trigger": "Peça otimização de inferência, quantização, GGUF, MLX ou deployment de LLM local"
+  },
+  {
+    "id": "python-patterns",
+    "name": "python-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões de código Python de produção — typing, dataclasses, context managers, decorators, async/await, testes com pytest e estrutura de projetos.",
+    "trigger": "Código Python com necessidade de boas práticas, typing ou estruturação de projeto"
+  },
+  {
+    "id": "postgres-patterns",
+    "name": "postgres-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões PostgreSQL avançados — índices, CTEs, window functions, JSONB, particionamento, explain analyze e otimização de queries.",
+    "trigger": "Peça query PostgreSQL avançada, otimização de índice ou modelagem de schema"
+  },
+  {
+    "id": "api-design",
+    "name": "api-design",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Design de APIs RESTful e GraphQL — convenções, versionamento, paginação, tratamento de erros, OpenAPI spec e boas práticas de contratos de API.",
+    "trigger": "Peça design de API, convenções REST, versionamento ou especificação OpenAPI"
+  },
+  {
+    "id": "backend-patterns",
+    "name": "backend-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões de arquitetura back-end — hexagonal, CQRS, event sourcing, repository pattern, dependency injection e clean architecture.",
+    "trigger": "Peça padrão arquitetural back-end, clean architecture ou organização de projeto server-side"
+  },
+  {
+    "id": "deployment-patterns",
+    "name": "deployment-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões de deploy e infraestrutura — Docker, CI/CD, blue-green, canary releases, health checks, rollback e estratégias de zero-downtime deployment.",
+    "trigger": "Peça estratégia de deploy, Dockerfile, pipeline CI/CD ou rollback de produção"
+  },
+  {
+    "id": "testing-patterns",
+    "name": "testing-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões de testes — pirâmide de testes, unit/integration/e2e, mocks e stubs, TDD, coverage e estratégias de teste para sistemas distribuídos.",
+    "trigger": "Peça estratégia de testes, cobertura, TDD ou organização de suite de testes"
+  },
+  {
+    "id": "typescript-patterns",
+    "name": "typescript-patterns",
+    "origin": "everything-claude-code",
+    "category": "Dev Patterns",
+    "description": "Padrões TypeScript avançados — utility types, generics, conditional types, branded types, zod schemas e strict type-safety em projetos Node/React.",
+    "trigger": "Peça TypeScript avançado, generics, utility types ou tipagem de projeto Node.js/React"
   }
 ]
