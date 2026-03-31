@@ -67,10 +67,10 @@
     },
     {
       "id": "figma",
-      "name": "Figma",
+      "name": "Figma (claude.ai)",
       "icon": "✏️",
       "status": "connected",
-      "description": "Leitura e geração de designs no Figma — contexto de design, screenshots, diagramas FigJam e Code Connect.",
+      "description": "Servidor Figma oficial via claude.ai — leitura e geração de designs, screenshots, FigJam e Code Connect.",
       "capabilities": [
         "Ler contexto e código de designs",
         "Capturar screenshots de frames",
@@ -80,7 +80,19 @@
         "Obter variáveis e tokens de design",
         "Ler metadados de arquivos"
       ],
-      "toolCount": 13
+      "toolCount": 15
+    },
+    {
+      "id": "figma-remote-mcp",
+      "name": "Figma (Remote MCP)",
+      "icon": "✏️",
+      "status": "connected",
+      "description": "Servidor Figma remoto — mesmas capacidades do claude.ai Figma mais geração de design estruturada (generate_figma_design).",
+      "capabilities": [
+        "Todas as capacidades do Figma claude.ai",
+        "Gerar designs estruturados via generate_figma_design"
+      ],
+      "toolCount": 16
     },
     {
       "id": "vercel",
@@ -123,6 +135,24 @@
         "Conectar com 7000+ apps externos"
       ],
       "toolCount": 1
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "icon": "🔄",
+      "status": "connected",
+      "description": "Plataforma de automação self-hosted — cria, gerencia e executa workflows com mais de 500 nodes de integração. Instância local em localhost:5678.",
+      "capabilities": [
+        "Criar e editar workflows",
+        "Executar e testar workflows",
+        "Listar e gerenciar workflows existentes",
+        "Buscar nodes e templates disponíveis",
+        "Validar workflows antes do deploy",
+        "Ver histórico de execuções",
+        "Gerenciar datatables",
+        "Deploy de templates prontos"
+      ],
+      "toolCount": 21
     }
   ],
   "skills": [

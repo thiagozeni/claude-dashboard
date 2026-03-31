@@ -1,9 +1,10 @@
 {
-  "date": "2026-03-22",
-  "status": "completed",
-  "generatedAt": "2026-03-22T22:03:01.058936",
+  "date": "2026-03-27",
+  "status": "pending",
+  "generatedAt": "2026-03-27T22:03:00.850160",
   "projectsModified": [
     "eat-kitchen-concierge",
+    "alugueis-bea",
     "claude-dashboard",
     "magma",
     "thiago-zeni",
@@ -19,8 +20,8 @@
       "uncommittedFiles": [],
       "recentFiles": [],
       "latestCommit": {
-        "hash": "d6888d9",
-        "message": "fix: adiciona permissão de escrita ao workflow"
+        "hash": "867e15c",
+        "message": "feat: adiciona nova seção de jogos com \"Werdum Fight Night\""
       }
     },
     {
@@ -47,43 +48,59 @@
       "messages": [],
       "uncommitted": 0,
       "uncommittedFiles": [],
-      "recentFiles": [],
+      "recentFiles": [
+        "requirements.txt",
+        "explorar_ritzel3.py",
+        "explorar_ritzel.py",
+        "explorar_lasserra.py",
+        "explorar_ritzel6.py",
+        "explorar_ritzel2.py",
+        "explorar_ritzel5.py",
+        ".env",
+        "explorar_ritzel4.py",
+        ".env.example",
+        ".claude/settings.local.json",
+        "_info/portais-imobiliarias.rtf",
+        ".github/workflows/scraper.yml",
+        "db/schema.sql",
+        "db/client.py"
+      ],
       "latestCommit": null
     },
     {
       "project": "claude-dashboard",
-      "hasGit": false,
+      "hasGit": true,
       "commits": 0,
       "messages": [],
-      "uncommitted": 0,
-      "uncommittedFiles": [],
-      "recentFiles": [
-        "index.html",
-        "style.css",
-        "app.js",
-        "logs/server.log",
-        "data/pending-reflection.json",
-        "data/evolution-log.json",
-        "data/skill-levels.json",
-        "data/improvement-plan.json",
-        "data/ai-hub.json"
+      "uncommitted": 5,
+      "uncommittedFiles": [
+        "M data/mcps.json",
+        "M data/pending-reflection.json",
+        "M data/projects.json",
+        "?? start.sh",
+        "?? update.py"
       ],
-      "latestCommit": null
+      "recentFiles": [],
+      "latestCommit": {
+        "hash": "c0fd4fe",
+        "message": "chore: marca reflexão 2026-03-22 como concluída"
+      }
     },
     {
       "project": "magma",
       "hasGit": true,
       "commits": 0,
       "messages": [],
-      "uncommitted": 2,
+      "uncommitted": 3,
       "uncommittedFiles": [
+        "?? _divulga/",
         "?? video-fx/Zoom_out_e1e6f639ea.mp4",
         "?? videos/"
       ],
       "recentFiles": [],
       "latestCommit": {
-        "hash": "377804c",
-        "message": "feat: stagger entrance animations on members, show collage and gallery"
+        "hash": "17c00ec",
+        "message": "fix: corrige instrumentos da 1ª formação da banda"
       }
     },
     {
@@ -91,8 +108,9 @@
       "hasGit": true,
       "commits": 0,
       "messages": [],
-      "uncommitted": 2,
+      "uncommitted": 3,
       "uncommittedFiles": [
+        "M index.html",
         "?? _cases/",
         "?? img/perfil_thiago_zeni.mp4"
       ],
@@ -105,23 +123,30 @@
     {
       "project": "werdum-fight",
       "hasGit": true,
-      "commits": 5,
+      "commits": 2,
       "messages": [
-        "0e74677 feat: configure GitHub Pages deploy",
-        "79001b2 feat: rewrite scenes with pixel-perfect Figma coordinates v1.1",
-        "b479887 feat: implement Figma HUD layout v1.2 - full pixel-perfect game UI",
-        "37957f4 v1.1 — layout Figma implementado nas telas",
-        "047f512 v1.0 — base do jogo funcional"
+        "8f43389 feat: enhance SEO with metadata, Open Graph and JSON-LD schema",
+        "40894c1 fix: preserve score and timer when using continue in game"
       ],
-      "uncommitted": 0,
-      "uncommittedFiles": [],
+      "uncommitted": 9,
+      "uncommittedFiles": [
+        "M src/scenes/GameScene.ts",
+        "M src/scenes/YouWinScene.ts",
+        "?? _artes-originais/bg-plateia.png",
+        "?? _artes-originais/bg-ringue.png",
+        "?? _artes-originais/cenario-cordas.png",
+        "?? _artes-originais/intro.png",
+        "?? _videos/",
+        "?? public/robots.txt",
+        "?? public/sitemap.xml"
+      ],
       "recentFiles": [],
       "latestCommit": {
-        "hash": "0e74677",
-        "message": "feat: configure GitHub Pages deploy"
+        "hash": "8f43389",
+        "message": "feat: enhance SEO with metadata, Open Graph and JSON-LD schema"
       }
     }
   ],
-  "suggestedTitle": "Trabalho em eat-kitchen-concierge, claude-dashboard, magma, thiago-zeni, werdum-fight",
+  "suggestedTitle": "Trabalho em eat-kitchen-concierge, alugueis-bea, claude-dashboard, magma, thiago-zeni, werdum-fight",
   "note": "Abra o dashboard > Evolução > Diário para completar a reflexão."
 }
