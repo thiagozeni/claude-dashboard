@@ -1036,12 +1036,13 @@ function renderImprovementPlan(data) {
   const ignored = loadIgnoredPlans();
   const IMPACT_ORDER = { alta: 0, média: 1, baixa: 2 };
 
-  function buildCard(item, isIgnored) {
+  function buildCard(item, isIgnored, canIgnore = false) {
     const card = document.createElement('article');
     card.className = `card plan-card${item.type === 'deprecacao' ? ' plan-card-dep' : ''}${isIgnored ? ' plan-card-ignored' : ''}`;
     card.setAttribute('aria-label', `Plano: ${item.title}`);
 
-    const actionBtn = isIgnored
+    const showBtn = isIgnored || canIgnore;
+    const actionBtn = !showBtn ? '' : isIgnored
       ? `<button class="plan-restore-btn" data-id="${escapeHtml(item.id)}" title="Restaurar sugestão" aria-label="Restaurar">↩ restaurar</button>`
       : `<button class="plan-ignore-btn" data-id="${escapeHtml(item.id)}" title="Ignorar sugestão" aria-label="Ignorar">ignorar</button>`;
 
@@ -1061,12 +1062,14 @@ function renderImprovementPlan(data) {
     `;
 
     const btn = card.querySelector('[data-id]');
-    btn.addEventListener('click', () => {
-      const set = loadIgnoredPlans();
-      if (isIgnored) set.delete(item.id); else set.add(item.id);
-      saveIgnoredPlans(set);
-      renderImprovementPlan(data);
-    });
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const set = loadIgnoredPlans();
+        if (isIgnored) set.delete(item.id); else set.add(item.id);
+        saveIgnoredPlans(set);
+        renderImprovementPlan(data);
+      });
+    }
 
     return card;
   }
