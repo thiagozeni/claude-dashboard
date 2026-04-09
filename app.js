@@ -205,12 +205,13 @@ function copyToClipboard(text, el) {
 
 /* ─── Navigation ─── */
 
-const SECTIONS = ['skills', 'agents', 'projects', 'mcps', 'aihub', 'cheatsheet', 'backlog', 'evolucao'];
+const SECTIONS = ['skills', 'agents', 'processos', 'projects', 'mcps', 'aihub', 'cheatsheet', 'backlog', 'evolucao'];
 const SECTION_LABELS = {
   skills: 'Skills',
   agents: 'Sub-Agents',
+  processos: 'Processos',
   projects: 'Projetos',
-  mcps: 'MCPs & Ferramentas',
+  mcps: 'MCPs / Tools',
   aihub: 'AI Hub',
   cheatsheet: 'Cheatsheet',
   backlog: 'Backlog',
@@ -430,6 +431,220 @@ function renderProjects(projects) {
 
     grid.appendChild(card);
   });
+}
+
+/* ─── Processos (pm2 + launchd) ─── */
+
+const PROCESS_POLL_ACTIVE_MS = 3000;
+const PROCESS_POLL_IDLE_MS = 15000;
+let processPollTimer = null;
+let processBusy = new Set();
+
+function formatUptime(ms) {
+  if (ms == null) return '—';
+  const s = Math.floor(ms / 1000);
+  if (s < 60) return `${s}s`;
+  const m = Math.floor(s / 60);
+  if (m < 60) return `${m}m`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `${h}h ${m % 60}m`;
+  const d = Math.floor(h / 24);
+  return `${d}d ${h % 24}h`;
+}
+
+function formatMemory(bytes) {
+  if (!bytes) return '—';
+  const mb = bytes / 1024 / 1024;
+  if (mb < 1024) return `${mb.toFixed(1)} MB`;
+  return `${(mb / 1024).toFixed(2)} GB`;
+}
+
+function statusTone(status) {
+  if (status === 'online') return 'high';
+  if (status === 'launching' || status === 'stopping') return 'mid';
+  if (status === 'errored' || status === 'stopped') return 'low';
+  return 'low';
+}
+
+async function fetchProcesses() {
+  try {
+    const res = await fetch('/api/processes');
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    return data.processes || [];
+  } catch (err) {
+    return { error: err.message || String(err) };
+  }
+}
+
+async function callProcessAction(name, action) {
+  try {
+    const res = await fetch(`/api/processes/${encodeURIComponent(name)}/${action}`, { method: 'POST' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    return data;
+  } catch (err) {
+    return { error: err.message || String(err) };
+  }
+}
+
+async function fetchProcessLogs(name) {
+  try {
+    const res = await fetch(`/api/processes/${encodeURIComponent(name)}/logs?lines=40`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+    return data;
+  } catch (err) {
+    return { error: err.message || String(err) };
+  }
+}
+
+function renderProcesses(processes) {
+  const grid = document.getElementById('processes-grid');
+  const alert = document.getElementById('processes-alert');
+  if (!grid || !alert) return;
+
+  if (processes && processes.error) {
+    grid.innerHTML = '';
+    alert.classList.remove('hidden');
+    alert.className = 'process-alert';
+    alert.innerHTML = `<strong>API indisponível.</strong> ${escapeHtml(processes.error)}`;
+    return;
+  }
+  alert.classList.add('hidden');
+  alert.innerHTML = '';
+
+  grid.innerHTML = '';
+  processes.forEach(proc => {
+    const tone = statusTone(proc.status);
+    const isLaunchd = proc.managedBy === 'launchd';
+    const isOnline = proc.status === 'online';
+    const busy = processBusy.has(proc.name);
+
+    const card = document.createElement('article');
+    card.className = `card process-card ${tone}`;
+    card.dataset.name = proc.name;
+
+    const portHtml = proc.port
+      ? `<a class="process-port" href="http://127.0.0.1:${proc.port}" target="_blank" rel="noopener">:${proc.port} ↗</a>`
+      : '';
+
+    const managedBadge = isLaunchd
+      ? '<span class="chip chip-launchd">launchd</span>'
+      : '<span class="chip chip-pm2">pm2</span>';
+
+    const actionsHtml = isLaunchd
+      ? '<span class="process-hint">gerenciado pelo launchd</span>'
+      : `
+        <button class="process-btn start" data-action="start" ${isOnline || busy ? 'disabled' : ''} title="Iniciar">▶</button>
+        <button class="process-btn stop" data-action="stop" ${!isOnline || busy ? 'disabled' : ''} title="Parar">⏹</button>
+        <button class="process-btn restart" data-action="restart" ${!isOnline || busy ? 'disabled' : ''} title="Reiniciar">↻</button>
+      `;
+
+    card.innerHTML = `
+      <div class="process-header">
+        <div class="process-title">
+          <span class="status-dot status-${proc.status}"></span>
+          <span class="process-name">${escapeHtml(proc.name)}</span>
+        </div>
+        <div class="process-meta-chips">
+          ${managedBadge}
+          ${portHtml}
+        </div>
+      </div>
+      <div class="process-metrics">
+        <div><span class="metric-label">Status</span><span class="metric-value">${escapeHtml(proc.status)}</span></div>
+        <div><span class="metric-label">PID</span><span class="metric-value">${proc.pid ?? '—'}</span></div>
+        <div><span class="metric-label">Uptime</span><span class="metric-value">${formatUptime(proc.uptimeMs)}</span></div>
+        <div><span class="metric-label">CPU</span><span class="metric-value">${proc.cpu.toFixed(1)}%</span></div>
+        <div><span class="metric-label">RAM</span><span class="metric-value">${formatMemory(proc.memory)}</span></div>
+        <div><span class="metric-label">Restarts</span><span class="metric-value">${proc.restarts}</span></div>
+      </div>
+      <div class="process-actions">
+        ${actionsHtml}
+        <button class="process-btn logs" data-action="logs" title="Ver logs">Logs</button>
+      </div>
+    `;
+
+    card.querySelectorAll('.process-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const action = btn.dataset.action;
+        if (action === 'logs') {
+          openProcessLogs(proc.name);
+          return;
+        }
+        processBusy.add(proc.name);
+        btn.disabled = true;
+        btn.textContent = '…';
+        const result = await callProcessAction(proc.name, action);
+        processBusy.delete(proc.name);
+        if (result.error) {
+          alert.classList.remove('hidden');
+          alert.className = 'process-alert';
+          alert.innerHTML = `<strong>${escapeHtml(action)} falhou:</strong> ${escapeHtml(result.error)}`;
+        }
+        await refreshProcesses();
+      });
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+async function refreshProcesses() {
+  const processes = await fetchProcesses();
+  renderProcesses(processes);
+}
+
+function startProcessPolling() {
+  stopProcessPolling();
+  const tick = async () => {
+    await refreshProcesses();
+    const delay = currentSection === 'processos' ? PROCESS_POLL_ACTIVE_MS : PROCESS_POLL_IDLE_MS;
+    processPollTimer = setTimeout(tick, delay);
+  };
+  tick();
+}
+
+function stopProcessPolling() {
+  if (processPollTimer) {
+    clearTimeout(processPollTimer);
+    processPollTimer = null;
+  }
+}
+
+async function openProcessLogs(name) {
+  const data = await fetchProcessLogs(name);
+  const overlay = document.createElement('div');
+  overlay.className = 'process-logs-overlay visible';
+  const content = data.error
+    ? `<pre class="logs-error">${escapeHtml(data.error)}</pre>`
+    : `
+      <div class="logs-section">
+        <div class="logs-label">stdout</div>
+        <pre class="logs-pre">${escapeHtml(data.stdout || '(vazio)')}</pre>
+      </div>
+      <div class="logs-section">
+        <div class="logs-label">stderr</div>
+        <pre class="logs-pre">${escapeHtml(data.stderr || '(vazio)')}</pre>
+      </div>
+    `;
+  overlay.innerHTML = `
+    <div class="process-logs-drawer">
+      <div class="logs-header">
+        <span class="logs-title">${escapeHtml(name)} — últimas 40 linhas</span>
+        <button class="logs-close" aria-label="Fechar">×</button>
+      </div>
+      <div class="logs-body">${content}</div>
+    </div>
+  `;
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.classList.contains('logs-close')) {
+      overlay.remove();
+    }
+  });
+  document.body.appendChild(overlay);
 }
 
 /* ─── MCPs ─── */
@@ -1451,6 +1666,9 @@ async function init() {
   renderBacklog();
   renderEvolution(evolutionLog, skillLevels, improvementPlan, pending);
   renderAIHub(aiHub);
+
+  /* Processos — polling contínuo (mais rápido quando a aba está ativa) */
+  startProcessPolling();
 
   /* Badge de notificação no nav de Evolução */
   if (pending && pending.status === 'pending') {

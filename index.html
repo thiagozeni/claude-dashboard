@@ -16,13 +16,11 @@
   <!-- SIDEBAR -->
   <nav id="sidebar" aria-label="Navegação principal">
     <div class="sidebar-logo" aria-label="Claude Hub">
-      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 2L28 9.5V22.5L16 30L4 22.5V9.5L16 2Z" fill="#7C3AED" opacity="0.15" />
-        <path d="M16 2L28 9.5V22.5L16 30L4 22.5V9.5L16 2Z" stroke="#7C3AED" stroke-width="1.5" fill="none" />
-        <path d="M16 7L23.5 11.5V20.5L16 25L8.5 20.5V11.5L16 7Z" fill="#7C3AED" opacity="0.4" />
-        <circle cx="16" cy="16" r="3.5" fill="#7C3AED" />
-      </svg>
-      <span class="logo-title">Claude Hub</span>
+      <div class="logo-mark" aria-hidden="true">CH</div>
+      <div class="logo-text">
+        <p class="logo-title">Claude Hub</p>
+        <p class="logo-kicker">Workspace</p>
+      </div>
     </div>
 
     <nav class="sidebar-nav">
@@ -50,10 +48,19 @@
           <rect x="2" y="9" width="5" height="5" rx="1" />
           <path d="M9 11.5h5M11.5 9v5" />
         </svg>
-        MCPs &amp; Ferramentas
+        MCPs / Tools
       </button>
 
       <div class="nav-section-label">Projetos</div>
+
+      <button class="nav-item" data-target="processos">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="4" cy="4" r="1.5" />
+          <circle cx="4" cy="12" r="1.5" />
+          <path d="M6 4h7M6 12h7M4 5.5v5" />
+        </svg>
+        Processos
+      </button>
 
       <button class="nav-item" data-target="projects">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -141,6 +148,16 @@
       <div class="cards-grid two-col" id="agents-grid"></div>
     </section>
 
+    <!-- PROCESSOS -->
+    <section id="processos" class="page hidden" aria-labelledby="processos-title">
+      <div class="page-header">
+        <h1 class="page-title" id="processos-title">Processos</h1>
+        <p class="page-subtitle">Dev servers locais gerenciados por pm2. Claude Hub é gerenciado pelo launchd.</p>
+      </div>
+      <div id="processes-alert" class="hidden"></div>
+      <div class="cards-grid" id="processes-grid"></div>
+    </section>
+
     <!-- PROJECTS -->
     <section id="projects" class="page hidden" aria-labelledby="projects-title">
       <div class="page-header">
@@ -153,7 +170,7 @@
     <!-- MCPs -->
     <section id="mcps" class="page hidden" aria-labelledby="mcps-title">
       <div class="page-header">
-        <h1 class="page-title" id="mcps-title">MCPs &amp; Ferramentas</h1>
+        <h1 class="page-title" id="mcps-title">MCPs / Tools</h1>
         <p class="page-subtitle">Servidores MCP conectados e ferramentas CLI instaladas no ambiente.</p>
       </div>
       <div id="mcps-content"></div>
