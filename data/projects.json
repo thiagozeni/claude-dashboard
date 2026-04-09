@@ -23,7 +23,7 @@
       "Seção Jogos com Werdum Fight Night",
       "Segurança: .gitignore + histórico git limpo"
     ],
-    "lastActivity": "2026-03-28"
+    "lastActivity": "2026-04-06"
   },
   {
     "id": "eat-kitchen-concierge",
@@ -49,7 +49,7 @@
       "8 idiomas",
       "Multi-step upselling flow"
     ],
-    "lastActivity": "2026-03-18"
+    "lastActivity": "2026-04-03"
   },
   {
     "id": "alugueis-bea",
@@ -70,7 +70,7 @@
       "Extração de PDFs com senha",
       "Integração Google Sheets"
     ],
-    "lastActivity": "2026-03-28"
+    "lastActivity": "2026-04-03"
   },
   {
     "id": "claude-dashboard",
@@ -91,7 +91,7 @@
       "Sem build pipeline",
       "Dados em JSON"
     ],
-    "lastActivity": "2026-03-28"
+    "lastActivity": "2026-04-09"
   },
   {
     "id": "magma",
@@ -160,7 +160,54 @@
       "Score e timer preservados no Continue",
       "HUD pixel-perfect com coordenadas Figma"
     ],
-    "lastActivity": "2026-03-27"
+    "lastActivity": "2026-04-08"
+  },
+  {
+    "id": "ai-control-panel",
+    "name": "AI Control Panel",
+    "path": "/Users/pro15/Claude/ai-control-panel",
+    "url": null,
+    "repo": "https://github.com/thiagozeni/ai-control-panel",
+    "type": "Fullstack",
+    "status": "active",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "xterm.js",
+      "n8n",
+      "node-pty"
+    ],
+    "description": "Painel de controle para gestão de agentes IA, workflows n8n e terminal persistente integrado.",
+    "highlights": [
+      "Terminal persistente no layout global",
+      "Integração com n8n workflows",
+      "Next.js App Router"
+    ],
+    "lastActivity": "2026-04-09"
+  },
+  {
+    "id": "ai-research",
+    "name": "AI Research",
+    "path": "/Users/pro15/Claude/ai-research",
+    "url": null,
+    "repo": null,
+    "type": "Scripts",
+    "status": "active",
+    "tech": [
+      "Python",
+      "Streamlit",
+      "feedparser",
+      "requests"
+    ],
+    "description": "Radar operacional de pesquisa e priorização de IA — monitoramento de alto sinal com ingestão, classificação, scoring e trends.",
+    "highlights": [
+      "Pipeline: ingestion → classification → scoring → trends",
+      "Dashboard Streamlit",
+      "Integração com Obsidian vault"
+    ],
+    "lastActivity": "2026-04-09"
   },
   {
     "id": "ai-hub",

@@ -1,5 +1,27 @@
 [
   {
+    "id": "log-022",
+    "date": "2026-04-05",
+    "project": "thiago-zeni",
+    "title": "Brand Guide skill — identidade visual extraída e codificada para reuso cross-project",
+    "learned": [
+      "Extrair design tokens diretamente do CSS de produção garante fidelidade total — não depende de documentação externa ou Figma",
+      "Uma skill de brand guide funciona como single source of truth de identidade visual entre projetos pessoais — evita drift visual ao criar novos sites ou componentes",
+      "A identidade visual do portfólio segue estética editorial/brutalista: border-radius quase zero (1-2px), tipografia pesada (Unbounded 900), accent neon (Electric Lime #C6FF00) com glow, grain overlay sutil"
+    ],
+    "toolsUsed": [
+      "Read",
+      "Write",
+      "Bash",
+      "Glob"
+    ],
+    "skillsUsed": [],
+    "agentsUsed": [],
+    "commit": null,
+    "version": "skill: brand-guide-thiago-zeni criada",
+    "highlight": "Skill customizada de brand guide criada em ~/.claude/skills/brand-guide-thiago-zeni/ — cobre paleta completa (dark mode + light sections), 3 famílias tipográficas com escala, componentes (CTAs, tags, cards, section headers), efeitos (glow lime, grain, parallax, cursor customizado), tom de voz e CSS variables copy-paste. Disponível via /brand-guide-thiago-zeni em qualquer projeto."
+  },
+  {
     "id": "log-021",
     "date": "2026-03-30",
     "project": "claude-dashboard",
@@ -13,9 +35,18 @@
       "AI-Research-SKILLs cobre todo o ciclo de ML: arquitetura → tokenização → fine-tuning → inferência → MLOps → avaliação — 28 módulos especializados",
       "claude-mem foi avaliado e descartado: instável com bugs ativos, e o sistema MEMORY.md já resolve a persistência de contexto de forma mais confiável e estruturada"
     ],
-    "toolsUsed": ["Bash", "Agent", "Read", "Write", "WebFetch"],
+    "toolsUsed": [
+      "Bash",
+      "Agent",
+      "Read",
+      "Write",
+      "WebFetch"
+    ],
     "skillsUsed": [],
-    "agentsUsed": ["planner", "Explore"],
+    "agentsUsed": [
+      "planner",
+      "Explore"
+    ],
     "commit": null,
     "version": "expansão: 322 skills + 45 agentes + 126 commands instalados",
     "highlight": "De 32 skills e 12 agentes para 322 skills e 45 agentes em uma sessão. A curadoria foi orientada pela nova frente de consultoria de IA para agência de marketing — priorizando marketing digital, product management, automação n8n, segurança e pesquisa em IA. O processo de avaliação dos 100 plugins da lista awesome-claude-plugins resultou em 17 instalados, 10 em stand-by e 73 descartados."
@@ -33,9 +64,15 @@
       "Chaves de API do Google devem ser restritas por API (YouTube Data API v3) e por HTTP referrer ou IP no Google Cloud Console",
       "Seção de jogos adicionada ao site com card do Werdum Fight Night linkando para werdumfight.com"
     ],
-    "toolsUsed": ["Bash", "Edit", "Agent"],
+    "toolsUsed": [
+      "Bash",
+      "Edit",
+      "Agent"
+    ],
     "skillsUsed": [],
-    "agentsUsed": ["code-reviewer"],
+    "agentsUsed": [
+      "code-reviewer"
+    ],
     "commit": "c669a08",
     "version": "security: .gitignore protegido + histórico git limpo + seção jogos",
     "highlight": "Ciclo completo de resposta a incidente de segurança: detecção via alerta Google/GitHub → remoção da chave → limpeza do histórico git com filter-repo → proteção via .gitignore → nova chave com restrições. Processo replicável em qualquer projeto."
@@ -52,8 +89,14 @@
       "Score e timer no Continue: estado mínimo necessário é currentScore + currentTime na GameScene — persistir no registry do Phaser (this.registry.set) para sobreviver à transição de cena",
       "JSON-LD para jogo: usar @type VideoGame com gamePlatform, applicationCategory e screenshot — melhora rich snippets no Google para jogos"
     ],
-    "toolsUsed": ["Read", "Edit", "Bash"],
-    "skillsUsed": ["seo-audit"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Bash"
+    ],
+    "skillsUsed": [
+      "seo-audit"
+    ],
     "agentsUsed": [],
     "commit": "8f43389",
     "version": "v1.3 — werdumfight.com, PWA, vídeo no cenário, SEO, fix score/timer no Continue",
@@ -72,7 +115,12 @@
       "Dados de contratempos com severity (low/medium/high) + resolved (boolean): estrutura mínima que permite filtros futuros e indicação visual de open vs. closed sem campos redundantes",
       "Grid de duas colunas responsivo para stats + incidents com @media (max-width: 768px) que colapsa para 1fr — padrão já presente no dashboard, aplicado consistentemente"
     ],
-    "toolsUsed": ["Read", "Edit", "Write", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": null,
@@ -91,7 +139,11 @@
       "`make.graphics()` no Phaser não aceita opção 'add' — chamar sem argumentos e posicionar via `setPosition()` é o padrão correto; o argumento extra lança erro silencioso",
       "VirtualJoystick com posições Figma: joystick em (60, 737), botões nas posições exatas do layout — consistência visual entre desktop e mobile depende de coordenadas absolutas no canvas"
     ],
-    "toolsUsed": ["Read", "Edit", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "b479887",
@@ -111,7 +163,11 @@
       "Cena de GameOver com bifurcação YES/NO: manter estado da wave corrente e repassar ao reiniciar permite continuar exatamente do ponto de morte — estado mínimo necessário é apenas o número da wave",
       "BootScene carrega sideview sprites (werdum-sv, dida-sv, thor-sv) separados dos sprites de combate — assets da UI de seleção têm dimensões diferentes, não reaproveitar spritesheets de gameplay"
     ],
-    "toolsUsed": ["Read", "Edit", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "37957f4",
@@ -130,7 +186,10 @@
       "Clone de vídeo via `document.createElement('video')` com mesmo `src`: carregamento paralelo pelo browser é automático se o arquivo já está em cache — latência de cross-fade praticamente zero",
       "Por que `loop` nativo falha no mobile iOS: implementação do decoder H.264 no iOS não garante continuidade entre o último e o primeiro frame — double-buffering é a solução portátil"
     ],
-    "toolsUsed": ["Read", "Edit"],
+    "toolsUsed": [
+      "Read",
+      "Edit"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "c191226",
@@ -149,7 +208,10 @@
       "`requestAnimationFrame` no scrubbing de vídeo: envolver `video.currentTime = pos` em `requestAnimationFrame(() => {...})` alinha as escritas ao ciclo de render do browser — elimina jank em scroll rápido no mobile sem perda de fidelidade",
       "Case page com og:image, canonical e JSON-LD únicos por page: cada `cases/case-X.html` tem seus próprios meta tags — critério mínimo para o Google indexar cada case como página independente com rich snippet"
     ],
-    "toolsUsed": ["Read", "Edit"],
+    "toolsUsed": [
+      "Read",
+      "Edit"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "684937a",
@@ -170,7 +232,10 @@
       "Gallery items com 34 elementos: delay de 35ms/item faz a onda diagonal completar em ~1.2s — items abaixo da dobra já chegam em opacity:1 quando o usuário rola até eles",
       "staggerCards() chamado tanto pelo IntersectionObserver (primeira visualização) quanto pelo click handler de tab (cada troca) — mesma função serve os dois casos"
     ],
-    "toolsUsed": ["Read", "Edit"],
+    "toolsUsed": [
+      "Read",
+      "Edit"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "377804c",
@@ -190,7 +255,10 @@
       "Vídeo de prêmios com scrubbing por passagem pelo viewport: `getBoundingClientRect().top` mapeado para currentTime limitado a 6s — mesma técnica adaptada para elemento não-hero",
       "Efeito boomerang via rAF: ao chegar no fim do vídeo, decrementar currentTime a cada frame em vez de loop normal — cria reverse sem `playbackRate = -1` (não suportado em todos os browsers)"
     ],
-    "toolsUsed": ["Read", "Edit"],
+    "toolsUsed": [
+      "Read",
+      "Edit"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "e2627ba",
@@ -210,8 +278,13 @@
       "Fotos de premiações integradas ao layout inline: imagens no fluxo do texto em vez de galeria separada — mais natural para leitura de case, melhor storytelling visual",
       "object-position: center 35% para ajustar enquadramento de foto landscape em container fixo — controla qual parte da imagem aparece sem recortar o arquivo"
     ],
-    "toolsUsed": ["Read", "Edit"],
-    "skillsUsed": ["seo-audit"],
+    "toolsUsed": [
+      "Read",
+      "Edit"
+    ],
+    "skillsUsed": [
+      "seo-audit"
+    ],
     "agentsUsed": [],
     "commit": "3e2387b",
     "version": "cases individuais — 5 pages, SEO, sitemap, scroll reveal, accordion state",
@@ -231,9 +304,16 @@
       "Sites estáticos puros (magma, thiago-zeni) não têm vetores de ataque relevantes — zero backend, zero dependências externas, zero variáveis de ambiente",
       "Projetos sem git não precisam de .gitignore — mas werdum-fight (sem git ainda) precisará de um ao ser inicializado; criado preventivamente"
     ],
-    "toolsUsed": ["Read", "Edit", "Bash", "Agent"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Bash",
+      "Agent"
+    ],
     "skillsUsed": [],
-    "agentsUsed": ["code-reviewer"],
+    "agentsUsed": [
+      "code-reviewer"
+    ],
     "commit": null,
     "version": "hardening — dashboard bind 127.0.0.1, CORS Vercel Function, security headers, .gitignore werdum-fight",
     "highlight": "Primeira auditoria de segurança dos projetos. Principal achado: dashboard HTTP exposto na rede local (corrigido). eat-kitchen-concierge recebeu CORS, OPTIONS handler e security headers via vercel.json."
@@ -255,9 +335,18 @@
       "werdum-fight ganhou novos sprites: Thor (punch/hit/walk/block/kick/knockdown), Werdum (kick/knockdown), Dida (knockdown) + cenário gerado pelo Gemini",
       "magma tem arquivos de vídeo não commitados: video-fx/Zoom_out e pasta videos/ — revisar antes de commitar para não incluir binários grandes no git"
     ],
-    "toolsUsed": ["Read", "Bash", "Edit", "Agent", "WebSearch", "WebFetch"],
+    "toolsUsed": [
+      "Read",
+      "Bash",
+      "Edit",
+      "Agent",
+      "WebSearch",
+      "WebFetch"
+    ],
     "skillsUsed": [],
-    "agentsUsed": ["general-purpose"],
+    "agentsUsed": [
+      "general-purpose"
+    ],
     "commit": null,
     "version": "dashboard v2 — evolution-log completo, firecrawl integrado, agentes reabilitados, pesquisa YouTube Claude Code",
     "highlight": "Sessão de auto-aprimoramento completa: auditoria de 7 projetos, 8 entradas no evolution-log, pesquisa dos 10 melhores criadores de Claude Code no YouTube com avaliação de 20 vídeos por canal. IndyDevDan identificado como referência técnica máxima."
@@ -274,7 +363,10 @@
       "Cases em pasta _cases como .rtf e .docx — conteúdo estruturado fora do HTML permite atualização independente do design",
       "Último commit: 4a0d8c1 — atualização de case Florense com período 2024-2025 e aviso de NDA"
     ],
-    "toolsUsed": ["Read", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "4a0d8c1",
@@ -294,7 +386,10 @@
       "Design system: --accent #E05A1A (laranja) + --gold #C87A2A + --bg #080808 — paleta rock pesado com apenas 2 cores de destaque",
       "Último commit: c75d346 — ajuste de título da página"
     ],
-    "toolsUsed": ["Read", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "c75d346",
@@ -315,7 +410,10 @@
       "Proteção contra sobrescrita: verificar valor existente na célula J antes de escrever; ignorar fórmulas (string com '='); reportar conflitos sem sobrescrever automaticamente",
       "openpyxl com auto-install: subprocess.run pip install se ImportError — script autocontido sem necessidade de setup prévio"
     ],
-    "toolsUsed": ["Read", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": null,
@@ -337,7 +435,10 @@
       "CORS restrito + validação de inputs: ALLOWED_ORIGIN por env var, history limitado a 40 entradas, 8000 chars/parte — hardening de segurança no backend",
       "i18n de 8 idiomas via TRANSLATIONS object estático — sem biblioteca, apenas Record<Language, TranslationObj>"
     ],
-    "toolsUsed": ["Read", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "de20e1a",
@@ -357,7 +458,10 @@
       "stdlib Python puro (urllib.request, re, json, html) sem requests/beautifulsoup — zero dependências externas no script de automação",
       "Google Analytics integrado (G-GQ2DERV731) no site estático"
     ],
-    "toolsUsed": ["Read", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": "d6888d9",
@@ -381,7 +485,9 @@
       "Spritesheets com frameWidth variável por ação: idle=160px, punch=192/224px, kick=224/384px — cada animação tem dimensão própria para acomodar o alcance do movimento",
       "Animações compartilhadas entre Player e Ally: Ally.createAnimations() verifica ac.exists() antes de criar, aproveitando o cache do Player se ele foi instanciado primeiro"
     ],
-    "toolsUsed": ["Read"],
+    "toolsUsed": [
+      "Read"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": null,
@@ -398,7 +504,9 @@
       "MCP gemini-image já está conectado no ambiente com generate_image e edit_image — substitui a necessidade de instalar cc-nano-banana",
       "Antes de instalar qualquer skill externa, verificar se o ambiente já possui a capacidade via MCP ou ferramenta nativa"
     ],
-    "toolsUsed": ["WebFetch"],
+    "toolsUsed": [
+      "WebFetch"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": null,
@@ -416,11 +524,22 @@
       "Padrão de sugestão de depreciação baseado em análise de uso real",
       "Cron job para reflexão diária com coleta automática de git logs"
     ],
-    "toolsUsed": ["Read", "Edit", "Write", "Bash"],
+    "toolsUsed": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash"
+    ],
     "skillsUsed": [],
     "agentsUsed": [],
     "commit": null,
     "version": "seção Evolução — bootstrap do sistema de auto-aprimoramento",
     "highlight": "Bootstrap do sistema de auto-aprimoramento. Primeira vez que o dashboard ganha capacidade reflexiva."
+  },
+  {
+    "date": "2026-04-09",
+    "type": "melhoria",
+    "title": "Indexação recursiva de skills + conclusão plan-019",
+    "description": "sync-skills.py agora desce recursivamente em ~/.claude/skills, indexando 90 sub-skills ai-research-* (chroma, vllm, unsloth, transformer-lens, etc) com tag de pilar. Total: 477 skills no dashboard. plan-019 fechado: invocação dessas skills é automática via auto-discovery do Claude — o dashboard serve como inventário visual antes de reuniões de consultoria."
   }
 ]

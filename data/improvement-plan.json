@@ -204,9 +204,11 @@
     "description": "28 módulos de pesquisa em IA instalados cobrindo fine-tuning, RAG, prompt engineering, MLOps, inferência, avaliação e multimodal. Usar para embasar recomendações técnicas na consultoria.",
     "impact": "alta",
     "effort": "baixa",
-    "status": "sugestao",
+    "status": "concluido",
     "suggestedBy": "claude",
-    "date": "2026-03-30"
+    "date": "2026-03-30",
+    "closedDate": "2026-04-09",
+    "closedNote": "Indexadas 90 sub-skills ai-research-* no dashboard (filtráveis por pilar). Conscientização do uso documentada — invocação é automática via auto-discovery, não manual."
   },
   {
     "id": "plan-020",
