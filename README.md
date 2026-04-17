@@ -1,11 +1,11 @@
-# Claude Dashboard
+# Claude Hub
 
 Central de informações sobre capacidades do Claude Code: skills, sub-agents, projetos, MCPs, cheatsheet e backlog pessoal.
 
 ## Como usar
 
 ```bash
-cd /Users/pro15/Claude/claude-dashboard
+cd /Users/pro15/Claude/claude-hub
 python3 -m http.server 8080
 ```
 
@@ -16,7 +16,7 @@ Abrir: http://localhost:8080
 ## Estrutura
 
 ```
-claude-dashboard/
+claude-hub/
 ├── index.html        — Estrutura HTML e layout
 ├── style.css         — Design system completo (dark theme)
 ├── app.js            — Lógica de navegação e renderização

@@ -1,1 +1,1 @@
-"""API package — endpoints REST do claude-dashboard backend."""
+"""API package — endpoints REST do claude-hub backend."""

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-update.py — Atualiza os dados do Claude Dashboard antes de servir.
+update.py — Atualiza os dados do Claude Hub antes de servir.
 
 O que faz:
   - Percorre cada projeto em projects.json
@@ -277,7 +277,7 @@ def update_claude_md_git_state(states: list[dict]):
 # ---------------------------------------------------------------------------
 
 def main():
-    print("Claude Dashboard — atualizando dados...")
+    print("Claude Hub — atualizando dados...")
     update_projects()
 
     # Scan all project subdirectories (skip hidden dirs and plain files)

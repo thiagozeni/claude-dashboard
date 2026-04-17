@@ -1,4 +1,4 @@
-"""claude-dashboard backend HTTP server.
+"""claude-hub backend HTTP server.
 
 Serve arquivos estáticos (HTML/CSS/JS/JSON) e expõe uma API REST em
 `/api/processes/*` que orquestra o daemon do pm2 via `api.processes`.
@@ -116,7 +116,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
 
 def main() -> None:
     server = HTTPServer((HOST, PORT), DashboardHandler)
-    print(f"Serving claude-dashboard on http://{HOST}:{PORT}")
+    print(f"Serving claude-hub on http://{HOST}:{PORT}")
     print(f"API:    http://{HOST}:{PORT}/api/processes")
     try:
         server.serve_forever()

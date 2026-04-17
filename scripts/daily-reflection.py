@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-daily-reflection.py — Reflexão diária automática do Claude Dashboard
+daily-reflection.py — Reflexão diária automática do Claude Hub
 
 Executa às 22h via cron. Varre git logs dos projetos ativos do dia,
 cria data/pending-reflection.json com dados pré-preenchidos e exibe
@@ -22,13 +22,13 @@ PROJECTS = [
     "/Users/pro15/Claude/cachorradas-estudios",
     "/Users/pro15/Claude/eat-kitchen-concierge",
     "/Users/pro15/Claude/alugueis-bea",
-    "/Users/pro15/Claude/claude-dashboard",
+    "/Users/pro15/Claude/claude-hub",
     "/Users/pro15/Claude/magma",
     "/Users/pro15/Claude/thiago-zeni",
     "/Users/pro15/Claude/werdum-fight",
 ]
 
-DASHBOARD_DIR = "/Users/pro15/Claude/claude-dashboard"
+DASHBOARD_DIR = "/Users/pro15/Claude/claude-hub"
 PENDING_FILE = os.path.join(DASHBOARD_DIR, "data", "pending-reflection.json")
 
 
