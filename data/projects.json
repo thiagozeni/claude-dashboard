@@ -23,7 +23,7 @@
       "Seção Jogos com Werdum Fight Night",
       "Segurança: .gitignore + histórico git limpo"
     ],
-    "lastActivity": "2026-04-06"
+    "lastActivity": "2026-04-17"
   },
   {
     "id": "eat-kitchen-concierge",
@@ -94,7 +94,7 @@
       "API /api/processes (pm2 control)",
       "Dados em JSON"
     ],
-    "lastActivity": "2026-04-09"
+    "lastActivity": "2026-04-17"
   },
   {
     "id": "magma",
@@ -213,9 +213,9 @@
     "lastActivity": "2026-04-17"
   },
   {
-    "id": "ai-hub",
-    "name": "AI Hub Local",
-    "path": "/Users/pro15",
+    "id": "ai-router",
+    "name": "AI Router",
+    "path": "/Users/pro15/Claude/ai-router",
     "url": null,
     "repo": null,
     "type": "Scripts",
@@ -227,11 +227,11 @@
       "Gemini API",
       "HuggingFace"
     ],
-    "description": "Hub de IAs locais rodando no Apple Silicon via MLX — roteador inteligente que classifica prompts e despacha para Qwen2.5-Coder (coding), DeepSeek-R1 14B (reasoning) ou Gemini 2.5 Pro (research).",
+    "description": "Roteador de IAs com 9 categorias: MLX local (Gemma 4, DeepSeek-R1, Qwen2.5-Coder) + OpenRouter free/paid (Qwen 3.6, Qwen3 Coder, Nemotron, Qwen3.5-flash, o4-mini) + Gemini 2.5 Pro. Classifica prompts e despacha pro modelo adequado.",
     "highlights": [
-      "Qwen2.5-Coder-7B-4bit",
-      "DeepSeek-R1-Distill-Qwen-14B-4bit",
-      "Gemini 2.5 Pro (web)"
+      "9 categorias: private/vision/bulk/hard_reasoning/review/coding/reasoning/research/general",
+      "MLX local + OpenRouter + Gemini",
+      "Shell scripts (~/ai-*.sh) + Python CLI"
     ],
     "lastActivity": "2026-03-15"
   },
@@ -258,6 +258,6 @@
       "Supabase backend",
       "Web Push"
     ],
-    "lastActivity": "2026-04-14"
+    "lastActivity": "2026-04-16"
   }
 ]

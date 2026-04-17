@@ -55,7 +55,7 @@ const FALLBACK_PROJECTS = [
   { id: "magma", name: "Magma", path: "/Users/pro15/Claude/magma", url: null, repo: null, type: "Site Estático", status: "active", tech: ["HTML", "CSS", "JavaScript"], description: "Site histórico da banda Magma (Nova Hamburgo/RS, 2001–2025) — discografia, fotos, vídeos e memória da trajetória da banda.", highlights: ["Site comemorativo", "Sem dependências externas"], lastActivity: "2026-03-15" },
   { id: "thiago-zeni", name: "Thiago Zeni", path: "/Users/pro15/Claude/thiago-zeni", url: null, repo: null, type: "Site Estático", status: "active", tech: ["HTML", "CSS", "JavaScript"], description: "Site pessoal de Thiago Zeni — Marketing Digital & Liderança Executiva.", highlights: ["Site pessoal", "Sem dependências externas"], lastActivity: "2026-03-15" },
   { id: "werdum-fight", name: "Werdum Fight", path: "/Users/pro15/Claude/werdum-fight", url: null, repo: null, type: "Game", status: "active", tech: ["TypeScript", "Vite", "Phaser 3"], description: "Arena Beat'em Up inspirado em Streets of Rage e Final Fight, desenvolvido com Phaser 3.", highlights: ["Arena Beat'em Up", "Phaser 3", "Sprites e personagens customizados"], lastActivity: "2026-03-15" },
-  { id: "ai-hub", name: "AI Hub Local", path: "/Users/pro15", url: null, repo: null, type: "Scripts", status: "active", tech: ["Python", "zsh", "MLX", "Gemini API", "HuggingFace"], description: "Hub de IAs locais rodando no Apple Silicon via MLX — roteador inteligente que classifica prompts e despacha para Qwen2.5-Coder (coding), DeepSeek-R1 14B (reasoning) ou Gemini 2.5 Pro (research).", highlights: ["Qwen2.5-Coder-7B-4bit", "DeepSeek-R1-Distill-Qwen-14B-4bit", "Gemini 2.5 Pro (web)"], lastActivity: "2026-03-15" }
+  { id: "ai-router", name: "AI Router", path: "/Users/pro15/Claude/ai-router", url: null, repo: null, type: "Scripts", status: "active", tech: ["Python", "zsh", "MLX", "OpenRouter", "Gemini API", "HuggingFace"], description: "Roteador de IAs com 9 categorias: MLX local (Gemma 4, DeepSeek-R1, Qwen2.5-Coder) + OpenRouter free/paid (Qwen 3.6, Qwen3 Coder, Nemotron, Qwen3.5-flash, o4-mini) + Gemini 2.5 Pro. Classifica prompts e despacha pro modelo adequado.", highlights: ["9 categorias (private/vision/bulk/hard_reasoning/review/coding/reasoning/research/general)", "MLX local + OpenRouter + Gemini", "Shell scripts (~/ai-*.sh) + Python CLI"], lastActivity: "2026-04-17" }
 ];
 
 const FALLBACK_MCPS = {
@@ -205,14 +205,14 @@ function copyToClipboard(text, el) {
 
 /* ─── Navigation ─── */
 
-const SECTIONS = ['skills', 'agents', 'processos', 'projects', 'mcps', 'aihub', 'cheatsheet', 'backlog', 'evolucao'];
+const SECTIONS = ['skills', 'agents', 'processos', 'projects', 'mcps', 'airouter', 'cheatsheet', 'backlog', 'evolucao'];
 const SECTION_LABELS = {
   skills: 'Skills',
   agents: 'Sub-Agents',
   processos: 'Processos',
   projects: 'Projetos',
   mcps: 'MCPs / Tools',
-  aihub: 'AI Hub',
+  airouter: 'AI Router',
   cheatsheet: 'Cheatsheet',
   backlog: 'Backlog',
   evolucao: 'Evolução'
@@ -1374,22 +1374,22 @@ function renderEvolution(evolutionLog, skillLevels, improvementPlan, pending) {
   renderImprovementPlan(improvementPlan);
 }
 
-/* ─── AI Hub ─── */
+/* ─── AI Router ─── */
 
-const FALLBACK_AIHUB = {
+const FALLBACK_AIROUTER = {
   stats: { totalCalls: 0, byRoute: { coding: 0, reasoning: 0, research: 0, general: 0 }, lastUsed: null },
   incidents: []
 };
 
 function renderAIHub(data) {
-  const container = document.getElementById('aihub-content');
+  const container = document.getElementById('airouter-content');
   if (!container) return;
   container.innerHTML = '';
 
   // ── Diagrama ──
   const diagramSection = document.createElement('div');
-  diagramSection.className = 'aihub-diagram-section';
-  diagramSection.setAttribute('aria-label', 'Diagrama de arquitetura do AI Hub');
+  diagramSection.className = 'airouter-diagram-section';
+  diagramSection.setAttribute('aria-label', 'Diagrama de arquitetura do AI Router');
 
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
@@ -1520,10 +1520,10 @@ function renderAIHub(data) {
 
   // ── Stats ──
   const bottomRow = document.createElement('div');
-  bottomRow.className = 'aihub-bottom-row';
+  bottomRow.className = 'airouter-bottom-row';
 
   const statsPanel = document.createElement('div');
-  statsPanel.className = 'aihub-panel';
+  statsPanel.className = 'airouter-panel';
 
   const totalCalls = stats.totalCalls || 0;
   const lastUsed = stats.lastUsed ? formatDateBR(stats.lastUsed) : 'Nunca';
@@ -1541,29 +1541,29 @@ function renderAIHub(data) {
     const val = byRoute[r.key] || 0;
     const pct = Math.round((val / maxVal) * 100);
     return `
-      <div class="aihub-route-row">
-        <span class="aihub-route-label">${escapeHtml(r.label)}</span>
-        <span class="aihub-route-model">${escapeHtml(r.model)}</span>
-        <div class="aihub-bar-wrap">
-          <div class="aihub-bar" style="width:${pct}%;background:${r.bar}"></div>
+      <div class="airouter-route-row">
+        <span class="airouter-route-label">${escapeHtml(r.label)}</span>
+        <span class="airouter-route-model">${escapeHtml(r.model)}</span>
+        <div class="airouter-bar-wrap">
+          <div class="airouter-bar" style="width:${pct}%;background:${r.bar}"></div>
         </div>
-        <span class="aihub-route-count">${val}</span>
+        <span class="airouter-route-count">${val}</span>
       </div>
     `;
   }).join('');
 
   statsPanel.innerHTML = `
-    <div class="aihub-panel-header">
-      <span class="aihub-panel-title">Uso por rota</span>
-      <span class="aihub-total-badge">${totalCalls} total</span>
+    <div class="airouter-panel-header">
+      <span class="airouter-panel-title">Uso por rota</span>
+      <span class="airouter-total-badge">${totalCalls} total</span>
     </div>
-    <div class="aihub-stats-meta">Último uso: <strong>${escapeHtml(lastUsed)}</strong></div>
-    <div class="aihub-route-list">${routeBarsHTML}</div>
+    <div class="airouter-stats-meta">Último uso: <strong>${escapeHtml(lastUsed)}</strong></div>
+    <div class="airouter-route-list">${routeBarsHTML}</div>
   `;
 
   // ── Incidents ──
   const incidentsPanel = document.createElement('div');
-  incidentsPanel.className = 'aihub-panel';
+  incidentsPanel.className = 'airouter-panel';
 
   const incidents = data.incidents || [];
   const openCount = incidents.filter(i => !i.resolved).length;
@@ -1604,9 +1604,9 @@ function renderAIHub(data) {
       }).join('');
 
   incidentsPanel.innerHTML = `
-    <div class="aihub-panel-header">
-      <span class="aihub-panel-title">Contratempos</span>
-      ${openCount > 0 ? `<span class="aihub-open-badge">${openCount} aberto${openCount > 1 ? 's' : ''}</span>` : '<span class="aihub-all-clear">tudo ok</span>'}
+    <div class="airouter-panel-header">
+      <span class="airouter-panel-title">Contratempos</span>
+      ${openCount > 0 ? `<span class="airouter-open-badge">${openCount} aberto${openCount > 1 ? 's' : ''}</span>` : '<span class="airouter-all-clear">tudo ok</span>'}
     </div>
     <div class="inc-list">${incHTML}</div>
   `;
@@ -1653,7 +1653,7 @@ async function init() {
     fetchJSON('./data/skill-levels.json', FALLBACK_SKILL_LEVELS),
     fetchJSON('./data/improvement-plan.json', FALLBACK_IMPROVEMENT_PLAN),
     fetchJSON('./data/pending-reflection.json', FALLBACK_PENDING),
-    fetchJSON('./data/ai-hub.json', FALLBACK_AIHUB)
+    fetchJSON('./data/ai-router.json', FALLBACK_AIROUTER)
   ]);
 
   allSkills = skills;
