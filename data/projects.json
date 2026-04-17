@@ -233,7 +233,7 @@
       "MLX local + OpenRouter + Gemini",
       "Shell scripts (~/ai-*.sh) + Python CLI"
     ],
-    "lastActivity": "2026-03-15"
+    "lastActivity": "2026-04-17"
   },
   {
     "id": "tennis-anywhere",
@@ -259,5 +259,26 @@
       "Web Push"
     ],
     "lastActivity": "2026-04-16"
+  },
+  {
+    "id": "rba-consultoria",
+    "name": "RBA Consultoria",
+    "path": "/Users/pro15/Claude/rba-consultoria",
+    "url": "https://thiagozeni.com.br/rba/",
+    "repo": null,
+    "type": "Consultoria",
+    "status": "active",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript vanilla"
+    ],
+    "description": "Consultoria em IA para RBA Comunicação (Novo Hamburgo/RS, 50 anos de mercado). Contém 2 subprojetos: 50-anos/ (landing v2 ativa, conceito Artesão Digital) e landing/ (v1 descartada, paleta antiga).",
+    "highlights": [
+      "Subprojetos: 50-anos (v2), landing (v1 descartada)",
+      "Tagline: Criada para se recriar",
+      "Início 2026-04-15"
+    ],
+    "lastActivity": "2026-04-17"
   }
 ]
