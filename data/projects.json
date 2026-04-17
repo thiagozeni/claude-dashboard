@@ -73,22 +73,25 @@
     "lastActivity": "2026-04-11"
   },
   {
-    "id": "claude-dashboard",
-    "name": "Claude Dashboard",
-    "path": "/Users/pro15/Claude/claude-dashboard",
+    "id": "claude-hub",
+    "name": "Claude Hub",
+    "path": "/Users/pro15/Claude/claude-hub",
     "url": null,
-    "repo": null,
+    "repo": "https://github.com/thiagozeni/claude-hub",
     "type": "Site Estático",
     "status": "active",
     "tech": [
+      "Python",
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript vanilla",
+      "launchd"
     ],
-    "description": "Central de informações sobre capacidades do Claude, sub-agents, projetos desenvolvidos juntos, MCPs conectados e backlog de ideias.",
+    "description": "Central de informações sobre capacidades do Claude Code: skills, sub-agents, projetos, MCPs, cheatsheet e backlog. Servido em localhost:8080 via LaunchAgent.",
     "highlights": [
       "Uso interno",
-      "Sem build pipeline",
+      "LaunchAgent (com.pro15.claude-hub)",
+      "API /api/processes (pm2 control)",
       "Dados em JSON"
     ],
     "lastActivity": "2026-04-09"
@@ -231,5 +234,30 @@
       "Gemini 2.5 Pro (web)"
     ],
     "lastActivity": "2026-03-15"
+  },
+  {
+    "id": "tennis-anywhere",
+    "name": "Tennis Anywhere",
+    "path": "/Users/pro15/Claude/tennis-anywhere",
+    "url": "https://tennis-anywhere.vercel.app",
+    "repo": "https://github.com/thiagozeni/tennis-anywhere",
+    "type": "PWA",
+    "status": "active",
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Vercel",
+      "PWA",
+      "Web Push"
+    ],
+    "description": "PWA com calendário ATP/WTA, notificações push e stream IPTV.",
+    "highlights": [
+      "Deploy Vercel",
+      "Supabase backend",
+      "Web Push"
+    ],
+    "lastActivity": "2026-04-14"
   }
 ]
